@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business Plan Slides 1–6 — Daybreak Brew Co. | Jesse Alaribe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============ APP CHROME ============ */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:Roboto,Arial,Helvetica,sans-serif;color:#202124;background:#f1f3f4;overflow:hidden;-webkit-font-smoothing:antialiased}
+button{font-family:inherit;border:0;background:none;cursor:pointer;color:inherit}
+.app{display:flex;flex-direction:column;height:100vh;min-height:0}
+
+.topbar{height:56px;background:#fff;border-bottom:1px solid #e4e6e8;display:flex;align-items:center;gap:12px;padding:0 14px;flex:none}
+.logo{width:36px;height:36px;flex:none}
+.doc-title{display:flex;flex-direction:column;gap:1px;min-width:0}
+.doc-title .row1{display:flex;align-items:center;gap:6px}
+.doc-title input{font-size:17px;font-family:Roboto,Arial;border:1px solid transparent;border-radius:4px;padding:2px 6px;width:370px;max-width:40vw;color:#202124}
+.doc-title input:hover{border-color:#dadce0}
+.doc-title input:focus{outline:none;border-color:#1a73e8}
+.doc-title .row2{display:flex;align-items:center;gap:10px;padding-left:6px;font-size:11.5px;color:#5f6368}
+.doc-title .row2 span{cursor:pointer;padding:1px 3px;border-radius:3px}
+.doc-title .row2 span:hover{background:#f1f3f4;text-decoration:underline}
+.saved{display:flex;align-items:center;gap:4px}
+.top-right{margin-left:auto;display:flex;align-items:center;gap:9px}
+.icon-btn{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#3c4043}
+.icon-btn:hover{background:#f1f3f4}
+.btn-share{display:flex;align-items:center;gap:8px;background:#c2e7ff;color:#001d35;font-size:14px;font-weight:500;border-radius:20px;padding:9px 18px}
+.btn-share:hover{background:#b3dffb}
+.btn-present{display:flex;align-items:center;gap:9px;background:#1a73e8;color:#fff;font-size:14px;font-weight:500;border-radius:20px;padding:9px 18px}
+.btn-present:hover{background:#1765cc}
+.btn-rubric{display:flex;align-items:center;gap:7px;font-size:13px;color:#3c4043;border:1px solid #dadce0;border-radius:18px;padding:8px 14px}
+.btn-rubric:hover{background:#f1f3f4}
+.btn-export{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:#3c4043;border:1px solid #dadce0;border-radius:18px;padding:8px 15px;background:#fff}
+.btn-export:hover{background:#f1f3f4}
+.avatar{width:34px;height:34px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;letter-spacing:.4px}
+
+.export-wrap{position:relative}
+.export-menu{position:absolute;right:0;top:calc(100% + 9px);width:338px;background:#fff;border:1px solid #dadce0;border-radius:12px;box-shadow:0 14px 38px rgba(0,0,0,.22);padding:8px;display:none;z-index:140}
+.export-menu.show{display:block}
+.exp-head{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#80868b;font-weight:700;padding:7px 12px 5px}
+.exp-item{display:flex;gap:13px;align-items:flex-start;padding:11px 12px;border-radius:9px;cursor:pointer;width:100%;text-align:left}
+.exp-item:hover{background:#f1f3f4}
+.exp-item .t{font-size:13.5px;font-weight:500;color:#202124}
+.exp-item .s{font-size:11.3px;color:#5f6368;margin-top:3px;line-height:1.5}
+.exp-sep{height:1px;background:#e8eaed;margin:7px 4px}
+.exp-foot{font-size:10.8px;color:#80868b;padding:4px 12px 7px;line-height:1.55}
+
+.menubar{height:32px;background:#fff;border-bottom:1px solid #e8eaed;display:flex;align-items:center;padding:0 10px;gap:1px;font-size:13px;flex:none;position:relative;z-index:40}
+.menu-btn{padding:4px 10px;border-radius:4px;white-space:nowrap}
+.menu-btn:hover,.menu-btn.open{background:#e8f0fe;color:#1967d2}
+.dropdown{position:absolute;top:31px;background:#fff;border:1px solid #dadce0;border-radius:8px;box-shadow:0 10px 28px rgba(0,0,0,.2);padding:8px 0;min-width:272px;z-index:80;display:none}
+.dropdown.show{display:block}
+.menu-item{display:flex;align-items:center;gap:14px;padding:7px 18px;font-size:13px;cursor:default;white-space:nowrap}
+.menu-item:hover{background:#f1f3f4}
+.menu-item .lbl{flex:1}
+.menu-item .k{color:#5f6368;font-size:11.5px}
+.menu-sep{height:1px;background:#e8eaed;margin:7px 0}
+
+.toolbar{height:46px;background:#fff;border-bottom:1px solid #e4e6e8;display:flex;align-items:center;gap:2px;padding:0 12px;flex:none;overflow:visible;position:relative;z-index:30}
+.tool{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#3c4043;flex:none}
+.tool:hover{background:#f1f3f4}
+.tool.on{background:#d3e3fd;color:#1967d2}
+.tsep{width:1px;height:24px;background:#e0e0e0;margin:0 7px;flex:none}
+.zoom-pick{height:30px;border-radius:5px;border:1px solid #dadce0;font-size:12.5px;color:#3c4043;padding:0 6px;background:#fff}
+.zoom-pick:hover{background:#f1f3f4}
+[data-tip]{position:relative}
+[data-tip]:hover:after{content:attr(data-tip);position:absolute;top:calc(100% + 7px);left:50%;transform:translateX(-50%);background:#3c4043;color:#fff;font-size:11.5px;padding:5px 9px;border-radius:5px;white-space:nowrap;z-index:120;pointer-events:none}
+
+.workspace{flex:1;display:flex;min-height:0}
+.filmstrip{width:198px;flex:none;background:#fff;border-right:1px solid #e0e0e0;overflow-y:auto;padding:14px 0 24px}
+.filmstrip::-webkit-scrollbar{width:8px}
+.filmstrip::-webkit-scrollbar-thumb{background:#dadce0;border-radius:8px}
+.thumb{display:flex;align-items:flex-start;gap:8px;padding:6px 12px;cursor:pointer}
+.thumb .num{font-size:11px;color:#5f6368;width:14px;text-align:right;padding-top:5px;flex:none}
+.thumb-frame{width:152px;height:85.5px;border:2px solid transparent;border-radius:3px;overflow:hidden;background:#fff;position:relative;box-shadow:0 1px 3px rgba(0,0,0,.2);flex:none}
+.thumb:hover .thumb-frame{border-color:#b7c6e8}
+.thumb.active .thumb-frame{border-color:#1a73e8}
+.thumb.active .num{color:#1a73e8;font-weight:500}
+.thumb-scale{width:1280px;height:720px;transform-origin:top left;transform:scale(0.11875)}
+
+.canvas-wrap{flex:1;overflow:auto;display:flex;align-items:center;justify-content:center;padding:26px;background:#f1f3f4}
+.stage-frame{position:relative;background:#fff;box-shadow:0 1px 8px rgba(32,33,36,.22);flex:none}
+.stage{width:1280px;height:720px;transform-origin:top left}
+
+.sidebar{width:312px;flex:none;background:#fff;border-left:1px solid #e0e0e0;overflow-y:auto;display:none}
+.sidebar.show{display:block}
+.sb-head{padding:16px 18px 12px;border-bottom:1px solid #e8eaed;display:flex;align-items:center;gap:10px}
+.sb-head h3{margin:0;font-size:14.5px;font-weight:500}
+.sb-body{padding:14px 18px 28px}
+.sb-item{display:flex;gap:11px;align-items:flex-start;padding:11px 0;border-bottom:1px solid #f1f3f4}
+.sb-item .ck{flex:none;margin-top:1px}
+.sb-item h4{margin:0 0 3px;font-size:12.8px;font-weight:500}
+.sb-item p{margin:0;font-size:11.6px;color:#5f6368;line-height:1.5}
+.sb-note{margin-top:16px;background:#f6f9ff;border:1px solid #d6e4ff;border-radius:10px;padding:12px 13px;font-size:11.6px;color:#3c4043;line-height:1.6}
+
+.notes-bar{height:34px;flex:none;background:#fff;border-top:1px solid #e4e6e8;display:flex;align-items:center;gap:10px;padding:0 14px;font-size:12px;color:#5f6368}
+.notes-bar .lbl{display:flex;align-items:center;gap:7px;cursor:pointer}
+.notes-bar .lbl:hover{color:#1967d2}
+.notes-area{flex:1;height:26px;overflow:hidden;font-size:11.8px;color:#3c4043;padding:5px 10px;border:1px solid transparent;border-radius:5px}
+.notes-area:hover{border-color:#dadce0}
+.notes-area:focus{outline:none;border-color:#1a73e8;background:#fff}
+
+.statusbar{height:28px;flex:none;background:#fff;border-top:1px solid #e4e6e8;display:flex;align-items:center;padding:0 14px;gap:16px;font-size:11.5px;color:#5f6368}
+.statusbar .right{margin-left:auto;display:flex;align-items:center;gap:12px}
+.zoom-ctrl{display:flex;align-items:center;gap:6px}
+.zoom-ctrl button{width:22px;height:22px;border-radius:4px;display:flex;align-items:center;justify-content:center}
+.zoom-ctrl button:hover{background:#f1f3f4}
+.zoom-bar{width:88px;height:3px;background:#dadce0;border-radius:3px;position:relative}
+.zoom-bar i{position:absolute;left:0;top:0;height:3px;background:#5f6368;border-radius:3px;width:44%}
+
+.findbar{display:none;align-items:center;gap:10px;margin-left:12px;background:#fff;border:1px solid #dadce0;border-radius:6px;padding:3px 6px 3px 12px;box-shadow:0 3px 10px rgba(0,0,0,.12)}
+.findbar.show{display:flex}
+.findbar input{border:0;outline:none;font-size:12.5px;width:170px;padding:4px}
+.findbar .cnt{font-size:11px;color:#5f6368}
+
+/* ============ PRESENT MODE ============ */
+.present{position:fixed;inset:0;background:#000;display:none;z-index:300}
+.present.on{display:block}
+.present-frame{position:absolute;left:50%;top:50%;overflow:hidden;background:#000}
+.present-stage{width:1280px;height:720px;transform-origin:top left}
+.p-ui{position:absolute;left:22px;bottom:22px;display:flex;align-items:center;gap:8px;background:rgba(32,33,36,.88);border-radius:26px;padding:7px 12px;color:#fff}
+.p-ui button{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff}
+.p-ui button:hover{background:rgba(255,255,255,.16)}
+.p-ui .cnt{font-size:12.5px;letter-spacing:.6px;min-width:44px;text-align:center}
+.p-adv{position:absolute;right:22px;bottom:22px;color:rgba(255,255,255,.55);font-size:11.5px;letter-spacing:.8px}
+
+.toast{position:fixed;left:50%;bottom:52px;transform:translate(-50%,26px);background:#323232;color:#fff;font-size:13px;padding:12px 20px;border-radius:6px;opacity:0;pointer-events:none;transition:all .28s ease;z-index:400;box-shadow:0 6px 20px rgba(0,0,0,.3);max-width:70vw;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+#printDeck{display:none}
+.export-host{position:absolute;left:-20000px;top:0;width:1280px;height:720px;overflow:hidden;background:#fff}
+@media print{
+  .app,.present,.toast{display:none!important}
+  body{overflow:visible;background:#fff}
+  #printDeck{display:block}
+  .print-page{width:960px;height:540px;overflow:hidden;page-break-after:always;position:relative}
+  .print-scale{width:1280px;height:720px;transform:scale(.75);transform-origin:top left}
+  @page{size:landscape;margin:0}
+}
+
+/* ============ REAL PHOTO SYSTEM ============ */
+.photo-frame{position:relative;width:100%;height:100%;overflow:hidden;border-radius:18px;background:#2B1A12;box-shadow:0 16px 38px rgba(24,12,4,.22)}
+.photo-img{width:100%;height:100%;object-fit:cover;display:block;user-select:none;-webkit-user-drag:none}
+.photo-cap{position:absolute;left:0;right:0;bottom:0;padding:38px 18px 13px;background:linear-gradient(to top,rgba(24,12,4,.86),rgba(24,12,4,.35) 55%,rgba(24,12,4,0));color:#FFF7EC;font-family:Inter,Arial;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;line-height:1.55}
+.ph-fb{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:24px;background:linear-gradient(150deg,#F6E7D2,#E4C79C)}
+.ph-fb .t{font-family:Fraunces,Georgia,serif;font-size:22px;color:#4A3524;line-height:1.2}
+.ph-fb .s{font-family:Inter,Arial;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8A6238;font-weight:600}
+
+/* ============ SLIDE DESIGN SYSTEM ============ */
+.slide{position:relative;width:1280px;height:720px;overflow:hidden;font-family:Inter,Arial,sans-serif;color:#2B1A12;background:#fff}
+.slide .bg-layer{position:absolute;inset:0}
+.slide .kicker{font-family:Inter,Arial;font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
+.slide h1{font-family:Fraunces,Georgia,serif;font-size:86px;line-height:.94;margin:0;font-weight:600;letter-spacing:-1px}
+.slide h2{font-family:Fraunces,Georgia,serif;font-size:44px;line-height:1.04;margin:0;font-weight:600;letter-spacing:-.5px}
+.slide h3{font-family:Inter,Arial;font-size:21px;line-height:1.2;margin:0;font-weight:700}
+.slide p{margin:0;font-size:16.5px;line-height:1.5}
+.slide ul{margin:0;padding-left:19px}
+.slide li{font-size:15.5px;line-height:1.45;margin-bottom:9px}
+.slide b{font-weight:700}
+.slide .card{position:absolute;background:#fff;border-radius:18px;padding:22px 24px;box-shadow:0 14px 34px rgba(24,12,4,.16)}
+.slide .card.dark{background:#2B1A12;color:#FBF3E7}
+.slide .img-card{position:absolute;border-radius:18px;overflow:hidden;background:#2B1A12;box-shadow:0 16px 38px rgba(24,12,4,.22)}
+.slide .lab{font-family:Inter,Arial;font-size:11.5px;font-weight:700;letter-spacing:.19em;text-transform:uppercase;margin-bottom:9px;display:block}
+.slide .rule{position:absolute;height:5px;border-radius:3px;background:#D98324}
+.slide .chip{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:7px 15px;font-size:13px;font-weight:600}
+.slide .s-foot{position:absolute;left:72px;right:72px;bottom:24px;display:flex;justify-content:space-between;align-items:center;font-family:Inter,Arial;font-size:10.5px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;opacity:.72}
+.slide .num-badge{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:Inter,Arial;font-size:14px;font-weight:700;color:#fff;flex:none}
+.slide .row{display:flex;gap:20px}
+.slide .half{flex:1;min-width:0}
+.slide .prod-row{display:flex;gap:15px;align-items:flex-start;height:92px;background:#fff;border:1px solid #F0E2CC;border-left:6px solid #D98324;border-radius:12px;padding:11px 15px}
+
+.s1 .bg-layer{background:linear-gradient(128deg,#2B1A12 0%,#4B2C1B 52%,#2B1A12 100%)}
+.s1 .bg-layer:after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(255,225,190,.10) 1.7px, transparent 0);background-size:30px 30px}
+.s2 .bg-layer{background:#FBF3E7}
+.s2 .bg-layer:after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(184,92,36,.11) 1.7px, transparent 0);background-size:26px 26px}
+.s2 .arc{position:absolute;right:-120px;top:-160px;width:520px;height:520px;border-radius:50%;background:#EADFC9}
+.s3 .bg-layer{background:#EEE9E1}
+.s3 .bg-layer:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.65) 3px, transparent 3px),linear-gradient(90deg, rgba(255,255,255,.65) 3px, transparent 3px);background-size:96px 96px;background-position:20px 40px}
+.s4 .bg-layer{background:linear-gradient(150deg,#1F4D3D 0%,#123528 60%,#1B4436 100%)}
+.s4 .bg-layer:after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,.09) 1.7px, transparent 0);background-size:28px 28px}
+.s5 .bg-layer{background:#FFFDF8}
+.s5 .band{position:absolute;left:0;top:0;width:100%;height:126px;background:linear-gradient(100deg,#B85C24,#D98324)}
+.s5 .band:after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,.16) 1.6px, transparent 0);background-size:24px 24px}
+.s6 .bg-layer{background:linear-gradient(140deg,#2B1A12,#3D2418 48%,#1F4D3D 100%)}
+.s6 .bg-layer:after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(255,225,190,.10) 1.7px, transparent 0);background-size:28px 28px}
+
+.stage .editable,.print-scale .editable,.export-host .editable{outline:none}
+.stage .editable:hover{outline:1.5px dashed rgba(26,115,232,.55);outline-offset:4px;border-radius:3px}
+.stage .editable:focus{outline:2px solid #1a73e8;outline-offset:4px}
+@media (max-width:1100px){.sidebar{position:absolute;right:0;top:0;bottom:0;z-index:60;box-shadow:-8px 0 24px rgba(0,0,0,.16)}}
+</style>
+</head>
+<body>
+
+<div class="app">
+  <div class="topbar">
+    <svg class="logo" viewBox="0 0 48 62" aria-label="Slides">
+      <rect x="8" y="2" width="34" height="44" rx="4" fill="#fff" stroke="#dadce0" stroke-width="2"/>
+      <rect x="2" y="10" width="34" height="46" rx="4" fill="#FBBC04"/>
+      <rect x="8" y="20" width="22" height="18" rx="2.5" fill="#fff"/>
+      <rect x="11" y="24" width="16" height="2.6" rx="1.3" fill="#FBBC04"/>
+      <rect x="11" y="29" width="12" height="2.6" rx="1.3" fill="#FBBC04"/>
+      <rect x="11" y="34" width="8" height="2.6" rx="1.3" fill="#FBBC04"/>
+    </svg>
+    <div class="doc-title">
+      <div class="row1">
+        <input id="docName" value="Business Plan Slides 1–6 — Daybreak Brew Co." spellcheck="false">
+        <button class="icon-btn" style="width:28px;height:28px" data-tip="Star" onclick="toast('Starred — it will show at the top of your Drive.')">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="1.7"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3Z"/></svg>
+        </button>
+      </div>
+      <div class="row2">
+        <span onclick="toast('File')">File</span><span onclick="toast('Edit')">Edit</span><span onclick="toast('View')">View</span><span onclick="toast('Insert')">Insert</span><span onclick="toast('Format')">Format</span><span onclick="toast('Slide')">Slide</span><span onclick="toast('Arrange')">Arrange</span><span onclick="toast('Tools')">Tools</span><span onclick="toast('Extensions')">Extensions</span><span onclick="toast('Help')">Help</span>
+        <span class="saved" style="cursor:default">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="1.7"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.2 8.2 4.5 4.5 0 0 0 7 18Z"/></svg>
+          All changes saved in Drive
+        </span>
+      </div>
+    </div>
+    <div class="top-right">
+      <button class="icon-btn" data-tip="Comment history" onclick="toast('No comments yet — 0 open threads.')">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 12a8 8 0 0 1-8 8H7l-4 3v-5.5A8 8 0 1 1 21 12Z"/></svg>
+      </button>
+      <button class="icon-btn" data-tip="Present now" onclick="toast('Meeting join is disabled in this class copy.')">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="6" width="13" height="12" rx="2.5"/><path d="m16 12 5.5-3.5v7L16 12Z"/></svg>
+      </button>
+      <button class="btn-rubric" onclick="toggleRubric()">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
+        Rubric
+      </button>
+
+      <div class="export-wrap">
+        <button class="btn-export" id="exportBtn" onclick="toggleExport(event)">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m0 0-4-4m4 4 4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          Export
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="export-menu" id="exportMenu">
+          <div class="exp-head">Export this presentation</div>
+
+          <button class="exp-item" onclick="exportPDF()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="2.5" width="18" height="19" rx="3" fill="#FCE8E6"/><path d="M7.5 8.5h9M7.5 12h9M7.5 15.5h5.5" stroke="#EA4335" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <div><div class="t">PDF document</div><div class="s">All 6 slides, landscape and print-ready. Choose “Save as PDF” in the print dialog.</div></div>
+          </button>
+
+          <button class="exp-item" onclick="exportSlides()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="3.5" width="19" height="17" rx="3" fill="#FEF7E0"/><rect x="6" y="7" width="12" height="8" rx="1.5" stroke="#F9AB00" stroke-width="1.8"/><path d="M12 15v3" stroke="#F9AB00" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <div><div class="t">Google Slides &nbsp;·&nbsp; .pptx</div><div class="s">Downloads a PowerPoint file — open Google Slides → File → Open → Upload to import and edit it.</div></div>
+          </button>
+
+          <button class="exp-item" onclick="exportDocs()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="2.5" width="18" height="19" rx="3" fill="#E8F0FE"/><path d="M8 8.5h8M8 12h8M8 15.5h5" stroke="#1A73E8" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <div><div class="t">Google Docs &nbsp;·&nbsp; .doc</div><div class="s">The written plan — all slide text as headings and bullets, plus your speaker notes.</div></div>
+          </button>
+
+          <div class="exp-sep"></div>
+
+          <button class="exp-item" onclick="exportAll()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.2" fill="#E6F4EA"/><path d="M12 7.5v7m0 0-2.6-2.6M12 14.5l2.6-2.6" stroke="#188038" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><div class="t">Export all three</div><div class="s">Runs Slides, Docs and PDF one after another. The PDF window opens last.</div></div>
+          </button>
+
+          <div class="exp-foot">Every export uses your latest edits — including text you typed on the slides.</div>
+        </div>
+      </div>
+
+      <button class="btn-present" onclick="startPresent()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg>
+        Slideshow
+      </button>
+      <button class="btn-share" onclick="toast('Share settings open in Google Drive for this class file.')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 15V4m0 0L8 8m4-4 4 4"/><path d="M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg>
+        Share
+      </button>
+      <div class="avatar" title="Jesse Alaribe">JA</div>
+    </div>
+  </div>
+
+  <div class="menubar" id="menubar">
+    <button class="menu-btn" data-menu="file">File</button>
+    <button class="menu-btn" data-menu="edit">Edit</button>
+    <button class="menu-btn" data-menu="view">View</button>
+    <button class="menu-btn" data-menu="insert">Insert</button>
+    <button class="menu-btn" data-menu="format">Format</button>
+    <button class="menu-btn" data-menu="slide">Slide</button>
+    <button class="menu-btn" data-menu="arrange">Arrange</button>
+    <button class="menu-btn" data-menu="tools">Tools</button>
+    <button class="menu-btn" data-menu="ext">Extensions</button>
+    <button class="menu-btn" data-menu="help">Help</button>
+    <div class="findbar" id="findbar">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="findInput" placeholder="Find in presentation" spellcheck="false">
+      <span class="cnt" id="findCount">0/0</span>
+      <button class="icon-btn" style="width:26px;height:26px" onclick="findNext()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <button class="icon-btn" style="width:26px;height:26px" onclick="closeFind()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="dropdown" id="dd-file">
+      <div class="menu-item" onclick="toast('This is your class copy — 6 slides saved automatically.')"><span class="lbl">New</span><span class="k">Ctrl+N</span></div>
+      <div class="menu-item" onclick="toast('Open is handled in Google Drive.')"><span class="lbl">Open</span><span class="k">Ctrl+O</span></div>
+      <div class="menu-item" onclick="toast('Copy created in your Drive.')"><span class="lbl">Make a copy</span></div>
+      <div class="menu-sep"></div>
+      <div class="menu-item" onclick="toast('Share dialog opens in Drive.')"><span class="lbl">Share</span></div>
+      <div class="menu-item" onclick="exportPDF()"><span class="lbl">Download &gt; PDF document (.pdf)</span></div>
+      <div class="menu-item" onclick="exportSlides()"><span class="lbl">Download &gt; Google Slides (.pptx)</span></div>
+      <div class="menu-item" onclick="exportDocs()"><span class="lbl">Download &gt; Google Docs (.doc)</span></div>
+      <div class="menu-sep"></div>
+      <div class="menu-item" onclick="exportPDF()"><span class="lbl">Print</span><span class="k">Ctrl+P</span></div>
+      <div class="menu-item" onclick="toast('Version history: today, 8:14 AM — 6 slides saved.')"><span class="lbl">Version history</span></div>
+    </div>
+    <div class="dropdown" id="dd-edit">
+      <div class="menu-item" onclick="undo()"><span class="lbl">Undo</span><span class="k">Ctrl+Z</span></div>
+      <div class="menu-item" onclick="redo()"><span class="lbl">Redo</span><span class="k">Ctrl+Y</span></div>
+      <div class="menu-sep"></div>
+      <div class="menu-item" onclick="document.execCommand('cut')"><span class="lbl">Cut</span><span class="k">Ctrl+X</span></div>
+      <div class="menu-item" onclick="document.execCommand('copy')"><span class="lbl">Copy</span><span class="k">Ctrl+C</span></div>
+      <div class="menu-item" onclick="document.execCommand('selectAll')"><span class="lbl">Select all</span><span class="k">Ctrl+A</span></div>
+      <div class="menu-sep"></div>
+      <div class="menu-item" onclick="openFind()"><span class="lbl">Find and replace</span><span class="k">Ctrl+F</span></div>
+    </div>
+    <div class="dropdown" id="dd-view">
+      <div class="menu-item" onclick="startPresent()"><span class="lbl">Slideshow</span><span class="k">Ctrl+Shift+L</span></div>
+      <div class="menu-item" onclick="toggleNotes()"><span class="lbl">Speaker notes</span></div>
+      <div class="menu-item" onclick="toggleFilm()"><span class="lbl">Show filmstrip</span></div>
+      <div class="menu-item" onclick="toggleRubric()"><span class="lbl">Rubric checklist</span></div>
+      <div class="menu-sep"></div>
+      <div class="menu-item" onclick="zoomTo(1)"><span class="lbl">100%</span></div>
+      <div class="menu-item" onclick="zoomTo(Math.min(2,currentZoom+0.1))"><span class="lbl">Zoom in</span></div>
+      <div class="menu-item" onclick="zoomTo(Math.max(0.3,currentZoom-0.1))"><span class="lbl">Zoom out</span></div>
+      <div class="menu-item" onclick="zoomFit()"><span class="lbl">Fit</span></div>
+    </div>
+    <div class="dropdown" id="dd-insert">
+      <div class="menu-item" onclick="focusFirstEditable()"><span class="lbl">Text box</span></div>
+      <div class="menu-item" onclick="toast('6 real photographs are already embedded — one per slide.')"><span class="lbl">Image</span></div>
+      <div class="menu-item" onclick="toast('Shape library is fixed in this template.')"><span class="lbl">Shape</span></div>
+      <div class="menu-item" onclick="toast('Line tool is fixed in this template.')"><span class="lbl">Line</span></div>
+      <div class="menu-sep"></div>
+      <div class="menu-item" onclick="toast('Comments appear in the right panel in Google Slides.')"><span class="lbl">Comment</span><span class="k">Ctrl+Alt+M</span></div>
+    </div>
+    <div class="dropdown" id="dd-format">
+      <div class="menu-item" onclick="document.execCommand('bold')"><span class="lbl">Bold</span><span class="k">Ctrl+B</span></div>
+      <div class="menu-item" onclick="document.execCommand('italic')"><span class="lbl">Italic</span><span class="k">Ctrl+I</span></div>
+      <div class="menu-item" onclick="document.execCommand('underline')"><span class="lbl">Underline</span><span class="k">Ctrl+U</span></div>
+      <div class="menu-sep"></div>
+      <div class="menu-item" onclick="document.execCommand('insertUnorderedList')"><span class="lbl">Bulleted list</span></div>
+      <div class="menu-item" onclick="toast('This deck uses the Daybreak theme fonts: Fraunces + Inter.')"><span class="lbl">Theme fonts &amp; colors</span></div>
+    </div>
+    <div class="dropdown" id="dd-slide">
+      <div class="menu-item" onclick="duplicateSlide()"><span class="lbl">Duplicate slide</span></div>
+      <div class="menu-item" onclick="toast('Slide background is set by the Daybreak theme on all 6 slides.')"><span class="lbl">Change background</span></div>
+      <div class="menu-sep"></div>
+      <div class="menu-item" onclick="goTo(0)"><span class="lbl">Go to slide 1 — Title</span></div>
+      <div class="menu-item" onclick="goTo(5)"><span class="lbl">Go to slide 6 — Management</span></div>
+    </div>
+    <div class="dropdown" id="dd-arrange">
+      <div class="menu-item" onclick="toast('Objects are locked to the Daybreak layout grid.')"><span class="lbl">Bring forward</span></div>
+      <div class="menu-item" onclick="toast('Objects are locked to the Daybreak layout grid.')"><span class="lbl">Send backward</span></div>
+      <div class="menu-item" onclick="toast('All text boxes are already aligned to the 72px margin grid.')"><span class="lbl">Align left</span></div>
+      <div class="menu-item" onclick="toast('All text boxes are already aligned to the 72px margin grid.')"><span class="lbl">Center horizontally</span></div>
+    </div>
+    <div class="dropdown" id="dd-tools">
+      <div class="menu-item" onclick="toggleSpell()"><span class="lbl">Spelling and grammar</span></div>
+      <div class="menu-item" onclick="wordCount()"><span class="lbl">Word count</span></div>
+      <div class="menu-item" onclick="toast('Preferences: keyboard shortcuts on, ruler off.')"><span class="lbl">Preferences</span></div>
+    </div>
+    <div class="dropdown" id="dd-ext">
+      <div class="menu-item" onclick="toast('Add-ons are disabled for this class assignment.')"><span class="lbl">Add-ons</span></div>
+      <div class="menu-item" onclick="toast('Apps Script is disabled for this class assignment.')"><span class="lbl">Apps Script</span></div>
+    </div>
+    <div class="dropdown" id="dd-help">
+      <div class="menu-item" onclick="openFind()"><span class="lbl">Search the menus</span><span class="k">Alt+/</span></div>
+      <div class="menu-item" onclick="toast('Shortcuts: ← → or PgUp/PgDn to move slides · Ctrl+Z undo · Ctrl+F find · Esc exits the slideshow.')"><span class="lbl">Keyboard shortcuts</span></div>
+      <div class="menu-item" onclick="toast('Business Plan Slides 1–6 · Daybreak Brew Co. · Jesse Alaribe')"><span class="lbl">About this presentation</span></div>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <button class="tool" data-tip="Back to Slides home" onclick="toast('Back to the Slides home screen.')">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="8" height="7" rx="1.5"/><rect x="13" y="4" width="8" height="7" rx="1.5"/><rect x="3" y="13" width="8" height="7" rx="1.5"/><rect x="13" y="13" width="8" height="7" rx="1.5"/></svg>
+    </button>
+    <button class="tool" data-tip="Undo (Ctrl+Z)" onclick="undo()">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M9 14 4 9l5-5"/><path d="M4 9h9a6 6 0 0 1 0 12h-3"/></svg>
+    </button>
+    <button class="tool" data-tip="Redo (Ctrl+Y)" onclick="redo()">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="m15 14 5-5-5-5"/><path d="M20 9h-9a6 6 0 0 0 0 12h3"/></svg>
+    </button>
+    <button class="tool" data-tip="Print / Export PDF" onclick="exportPDF()">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 9V4h10v5"/><rect x="4" y="9" width="16" height="7" rx="2"/><rect x="7" y="14" width="10" height="6" rx="1"/></svg>
+    </button>
+    <button class="tool" data-tip="Export Google Slides (.pptx)" onclick="exportSlides()">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M12 8v5m0 0-2-2m2 2 2-2"/><path d="M7 20h10"/></svg>
+    </button>
+    <button class="tool" data-tip="Paint format" onclick="toast('Paint format copies styling between text boxes in Google Slides.')">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="4" width="12" height="6" rx="1.5"/><path d="M10 10v4a2 2 0 0 0 2 2h2"/><rect x="12" y="14" width="6" height="6" rx="1.5"/></svg>
+    </button>
+    <div class="tsep"></div>
+    <select class="zoom-pick" id="zoomSelect" onchange="zoomSelectChange(this.value)" title="Zoom">
+      <option value="fit">Fit</option>
+      <option value="0.5">50%</option>
+      <option value="0.75">75%</option>
+      <option value="1">100%</option>
+      <option value="1.25">125%</option>
+      <option value="1.5">150%</option>
+    </select>
+    <div class="tsep"></div>
+    <button class="tool on" data-tip="Select" onclick="setTool(this,'Select')">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M6 3.5 19 12.4l-5.6.7 3 6.1-2.7 1.3-3-6.1L6 18.2V3.5Z"/></svg>
+    </button>
+    <button class="tool" data-tip="Text box" onclick="setTool(this,'Text box');focusFirstEditable()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 6h14M12 6v13M9 19h6"/></svg>
+    </button>
+    <button class="tool" data-tip="Insert image" onclick="setTool(this,'Image');toast('6 real photographs are already embedded — one per slide.')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.5" cy="10" r="1.6"/><path d="m4 17 5-4.5 4 3.2 3-2.4 4 3.7"/></svg>
+    </button>
+    <button class="tool" data-tip="Shape" onclick="setTool(this,'Shape');toast('Shape tool: the deck already uses the Daybreak shape set.')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="9" height="9" rx="1.5"/><circle cx="16.5" cy="16.5" r="4.5"/></svg>
+    </button>
+    <button class="tool" data-tip="Line" onclick="setTool(this,'Line');toast('Line tool selected.')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 19 19 5"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="5" r="2"/></svg>
+    </button>
+    <button class="tool" data-tip="Add comment" onclick="toast('Comment added to slide ' + (current+1) + '.')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 12a7 7 0 0 1-7 7H8l-4 3v-5.2A7 7 0 1 1 20 12Z"/><path d="M12 9v6M9 12h6"/></svg>
+    </button>
+    <div class="tsep"></div>
+    <button class="tool" data-tip="Background" onclick="toast('Every slide already has a related Daybreak background.')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 15l5-4 4 3 3-2.5 6 5"/></svg>
+    </button>
+    <button class="tool" data-tip="Layout" onclick="toast('Layouts: Title, Values &amp; Goals, Facility, Ownership, Products, Management.')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M11 9v11"/></svg>
+    </button>
+    <button class="tool" data-tip="Theme" onclick="toast('Theme: “Daybreak Roast” — espresso, cream &amp; caramel.')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8.5"/><circle cx="9" cy="9.5" r="1.3" fill="currentColor"/><circle cx="15" cy="9.5" r="1.3" fill="currentColor"/><circle cx="9.5" cy="15" r="1.3" fill="currentColor"/></svg>
+    </button>
+    <button class="tool" data-tip="Transition" onclick="toast('Transition: Fade · 0.6s · apply to all 6 slides.')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="6" width="7" height="12" rx="1.5"/><rect x="14" y="6" width="7" height="12" rx="1.5"/><path d="M10.5 12h3"/></svg>
+    </button>
+    <button class="tool" data-tip="Find (Ctrl+F)" onclick="openFind()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    </button>
+  </div>
+
+  <div class="workspace">
+    <aside class="filmstrip" id="filmstrip"></aside>
+    <main class="canvas-wrap" id="canvasWrap">
+      <div class="stage-frame" id="stageFrame">
+        <div class="stage" id="stage"></div>
+      </div>
+    </main>
+    <aside class="sidebar" id="sidebar">
+      <div class="sb-head">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
+        <h3>Assignment rubric — 60 points</h3>
+        <button class="icon-btn" style="margin-left:auto;width:28px;height:28px" onclick="toggleRubric()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+      <div class="sb-body" id="sbBody"></div>
+    </aside>
+  </div>
+
+  <div class="notes-bar">
+    <div class="lbl" onclick="toggleNotes()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+      <span id="notesToggleLabel">Speaker notes</span>
+    </div>
+    <div class="notes-area" id="notesArea" contenteditable="true" spellcheck="true"></div>
+  </div>
+
+  <div class="statusbar">
+    <span id="statusSlide">Slide 1 of 6</span>
+    <span id="statusSaved">Last edit was just now</span>
+    <div class="right">
+      <span id="statusTheme">Theme: Daybreak Roast</span>
+      <div class="zoom-ctrl">
+        <button onclick="zoomTo(Math.max(0.3,currentZoom-0.1))" title="Zoom out">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/></svg>
+        </button>
+        <div class="zoom-bar"><i id="zoomFill"></i></div>
+        <button onclick="zoomTo(Math.min(2,currentZoom+0.1))" title="Zoom in">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+      </div>
+      <span id="zoomLabel">Fit</span>
+    </div>
+  </div>
+</div>
+
+<div class="present" id="present">
+  <div class="present-frame" id="presentFrame">
+    <div class="present-stage" id="presentStage"></div>
+  </div>
+  <div class="p-ui" id="pui">
+    <button onclick="presentGo(-1)" title="Previous">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m14 6-6 6 6 6"/></svg>
+    </button>
+    <span class="cnt" id="presentCount">1 / 6</span>
+    <button onclick="presentGo(1)" title="Next">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m10 6 6 6-6 6"/></svg>
+    </button>
+    <button onclick="exitPresent()" title="Exit">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <div class="p-adv">CLICK OR PRESS → TO ADVANCE · ESC TO EXIT</div>
+</div>
+
+<div class="toast" id="toast"></div>
+<div id="printDeck"></div>
+
+<script>
+/* =========================================================
+   1. REAL PHOTOGRAPHS (online, with automatic fallback chain)
+   ========================================================= */
+var PHOTOS = [
+  {
+    srcs:[
+      'https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=80',
+      'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80'
+    ],
+    alt:'Barista preparing fresh coffee at a café counter',
+    cap:'The Daybreak bar — espresso, nitro cold brew &amp; pastries served cart-side',
+    title:'Daybreak Brew Co. coffee bar',
+    pos:'center'
+  },
+  {
+    srcs:[
+      'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1000&q=80',
+      'https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1000',
+      'https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1000&q=80'
+    ],
+    alt:'Cup of coffee with latte art',
+    cap:'Consistency in every cup — the same great cup, every single morning',
+    title:'Quality &amp; consistency',
+    pos:'center'
+  },
+  {
+    srcs:[
+      'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1300&q=80',
+      'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1300&q=80',
+      'https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=1300'
+    ],
+    alt:'City street and neighborhood where the cart will operate',
+    cap:'Columbia, Maryland — boardwalks, offices &amp; schools within one 2-mile radius',
+    title:'Location &amp; daily route',
+    pos:'center'
+  },
+  {
+    srcs:[
+      'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80',
+      'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80'
+    ],
+    alt:'Handshake over business paperwork and documents',
+    cap:'One owner, one vision — sole proprietorship at launch',
+    title:'Ownership &amp; paperwork',
+    pos:'center'
+  },
+  {
+    srcs:[
+      'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80',
+      'https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1200&q=80'
+    ],
+    alt:'Fresh pastries and coffee — the Daybreak product line',
+    cap:'Fresh local pastries, nitro cold brew &amp; made-to-order espresso',
+    title:'Products &amp; services',
+    pos:'center'
+  },
+  {
+    srcs:[
+      'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
+      'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80'
+    ],
+    alt:'Small business team working together',
+    cap:'A small, well-trained team — participative, coaching leadership',
+    title:'Management &amp; the team',
+    pos:'center'
+  }
+];
+
+function photoHTML(i){
+  var ph = PHOTOS[i];
+  return '<div class="photo-frame">'+
+    '<img class="photo-img" data-idx="'+i+'" data-attempt="0" src="'+ph.srcs[0]+'" alt="'+ph.alt+
+    '" referrerpolicy="no-referrer" loading="eager" decoding="async" draggable="false" onerror="photoFail(this)" style="object-position:'+ph.pos+'">'+
+    '<div class="photo-cap">'+ph.cap+'</div>'+
+  '</div>';
+}
+function photoFail(img){
+  var i = parseInt(img.getAttribute('data-idx'),10);
+  var n = parseInt(img.getAttribute('data-attempt'),10) + 1;
+  var ph = PHOTOS[i];
+  if(n < ph.srcs.length){
+    img.setAttribute('data-attempt', n);
+    img.src = ph.srcs[n];
+    return;
+  }
+  var frame = img.parentElement;
+  frame.innerHTML =
+    '<div class="ph-fb">'+
+      '<svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#8A6238" stroke-width="1.6">'+
+        '<rect x="2.5" y="6.5" width="19" height="13" rx="3"/><circle cx="12" cy="13" r="4"/><path d="M8 6.5 9.5 4h5L16 6.5"/>'+
+      '</svg>'+
+      '<div class="t">'+ph.title+'</div>'+
+      '<div class="s">'+ph.alt+'</div>'+
+    '</div>';
+}
+
+/* =========================================================
+   2. SLIDE CONTENT
+   ========================================================= */
+function foot(n,color){
+  return '<div class="s-foot" style="color:'+color+'"><span>Daybreak Brew Co.</span><span>Business Plan · '+n+' / 6</span></div>';
+}
+
+function slide1(){
+ return '<div class="slide s1">'+
+  '<div class="bg-layer"></div>'+
+  '<div style="position:absolute;left:72px;top:92px;width:660px;color:#F0C089" class="kicker editable" data-key="s1kick" contenteditable="true">Principles of Business &amp; Management &nbsp;·&nbsp; Business Plan 2026–2027</div>'+
+  '<h1 class="editable" data-key="s1name" contenteditable="true" style="position:absolute;left:72px;top:122px;width:640px;color:#FFF7EC">Daybreak<br>Brew Co.</h1>'+
+  '<div class="rule" style="left:74px;top:332px;width:118px"></div>'+
+  '<div class="editable" data-key="s1tag" contenteditable="true" style="position:absolute;left:72px;top:358px;width:620px;font-family:Fraunces,Georgia,serif;font-size:31px;line-height:1.16;color:#FFE7BE">Mobile Specialty Coffee Cart</div>'+
+  '<div class="editable" data-key="s1desc" contenteditable="true" style="position:absolute;left:72px;top:406px;width:580px;font-size:17.5px;line-height:1.55;color:rgba(255,240,220,.82)">Café-quality cold brew, espresso drinks, and locally baked pastries — served from a mobile cart at schools, offices, and community events across Columbia, Maryland.</div>'+
+  '<div style="position:absolute;left:72px;top:528px;width:600px;display:flex;align-items:center;gap:16px">'+
+    '<div style="width:52px;height:52px;border-radius:16px;background:#D98324;display:flex;align-items:center;justify-content:center;font-family:Fraunces,Georgia,serif;font-size:22px;color:#2B1A12;font-weight:700">JA</div>'+
+    '<div>'+
+      '<div class="editable" data-key="s1by" contenteditable="true" style="font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:#F0C089;font-weight:600">Prepared by</div>'+
+      '<div class="editable" data-key="s1name2" contenteditable="true" style="font-size:26px;font-weight:700;color:#FFF7EC;letter-spacing:.2px">Jesse Alaribe</div>'+
+      '<div class="editable" data-key="s1role" contenteditable="true" style="font-size:14.5px;color:rgba(255,240,220,.72);margin-top:2px">Founder &amp; Owner &nbsp;·&nbsp; Business Plan Slides 1–6</div>'+
+    '</div>'+
+  '</div>'+
+  '<div style="position:absolute;left:712px;top:92px;width:516px;height:528px">'+photoHTML(0)+'</div>'+
+  foot('01','rgba(255,231,190,.7)')+
+ '</div>';
+}
+
+function slide2(){
+ return '<div class="slide s2">'+
+  '<div class="bg-layer"></div><div class="arc" data-fill="EADFC9"></div>'+
+  '<div class="kicker editable" data-key="s2kick" contenteditable="true" style="position:absolute;left:72px;top:52px;color:#B85C24">Slide 02 &nbsp;·&nbsp; Vision, Values &amp; Goals</div>'+
+  '<h2 class="editable" data-key="s2title" contenteditable="true" style="position:absolute;left:72px;top:78px;width:820px;color:#2B1A12">What Daybreak Brew Co. Stands For</h2>'+
+  '<div style="position:absolute;left:926px;top:38px;width:278px;height:196px">'+photoHTML(1)+'</div>'+
+  '<div class="card dark" style="left:72px;top:172px;width:1136px;height:118px;padding:22px 30px">'+
+    '<span class="lab" style="color:#F0C089">Mission Statement</span>'+
+    '<div class="editable" data-key="s2mission" contenteditable="true" style="font-family:Fraunces,Georgia,serif;font-size:21px;line-height:1.36;color:#FBF3E7">Daybreak Brew Co. exists to bring café-quality coffee to where people already are — quickly, affordably, and responsibly — so every morning in Columbia starts with a better cup and a friendly face.</div>'+
+  '</div>'+
+  '<div class="card" style="left:72px;top:312px;width:556px;height:344px">'+
+    '<span class="lab" style="color:#B85C24">Values &amp; Vision</span>'+
+    '<h3 style="margin-bottom:12px">How I define success</h3>'+
+    '<div class="editable" data-key="s2values" contenteditable="true">'+
+    '<ul style="list-style:none;padding-left:0">'+
+      '<li style="position:relative;padding-left:26px"><b>Consistency over hype.</b> Every cup tastes the same great way, every single time.</li>'+
+      '<li style="position:relative;padding-left:26px"><b>Community first.</b> Partner with Howard County bakers and roasters, hire local students, and show up at school and neighborhood events.</li>'+
+      '<li style="position:relative;padding-left:26px"><b>Sustainability.</b> Compostable cups, oat milk at no extra charge, and a zero-waste goal for the cart.</li>'+
+      '<li style="position:relative;padding-left:26px"><b>Honest service.</b> Fair prices, friendly faces, and a 90-second service promise.</li>'+
+    '</ul></div>'+
+    '<div class="editable" data-key="s2close" contenteditable="true" style="margin-top:12px;font-size:15px;font-style:italic;color:#7A4A2C;border-left:4px solid #D98324;padding-left:13px;line-height:1.45">Success to me is not profit first — it is regulars who know my name and come back tomorrow.</div>'+
+  '</div>'+
+  '<div class="card" style="left:652px;top:312px;width:556px;height:344px">'+
+    '<span class="lab" style="color:#B85C24">Missions &amp; Goals</span>'+
+    '<div class="row" style="gap:24px">'+
+      '<div class="half">'+
+        '<h3 style="font-size:16px;margin-bottom:9px;color:#2B1A12">Short-Term (1–3 Years)</h3>'+
+        '<div class="editable" data-key="s2short" contenteditable="true"><ul style="font-size:14.6px">'+
+          '<li>Launch the cart by June 2027 and pass all Howard County health and mobile-vendor permits.</li>'+
+          '<li>Reach 150 customers per day and $75,000 in first-year revenue.</li>'+
+          '<li>Lock in 3 weekly locations and 10 event bookings each season.</li>'+
+        '</ul></div>'+
+      '</div>'+
+      '<div class="half">'+
+        '<h3 style="font-size:16px;margin-bottom:9px;color:#2B1A12">Long-Term (5–10+ Years)</h3>'+
+        '<div class="editable" data-key="s2long" contenteditable="true"><ul style="font-size:14.6px">'+
+          '<li>Grow to 3 carts and one brick-and-mortar café in downtown Columbia.</li>'+
+          '<li>Wholesale Daybreak cold brew to local grocery stores and campus cafés.</li>'+
+          '<li>Employ 15+ people and run a fully net-zero-waste operation.</li>'+
+        '</ul></div>'+
+      '</div>'+
+    '</div>'+
+    '<div style="position:absolute;left:24px;right:24px;bottom:20px;height:5px;border-radius:3px;background:linear-gradient(90deg,#D98324,#B85C24)"></div>'+
+  '</div>'+
+  foot('02','#9A6C48')+
+ '</div>';
+}
+
+function slide3(){
+ return '<div class="slide s3">'+
+  '<div class="bg-layer"></div>'+
+  '<div class="kicker editable" data-key="s3kick" contenteditable="true" style="position:absolute;left:72px;top:52px;color:#B85C24">Slide 03 &nbsp;·&nbsp; Facility and Location</div>'+
+  '<h2 class="editable" data-key="s3title" contenteditable="true" style="position:absolute;left:72px;top:78px;width:760px;color:#2B1A12">A Mobile Cart Built for Columbia</h2>'+
+  '<div class="img-card" style="left:72px;top:180px;width:560px;height:476px">'+photoHTML(2)+'</div>'+
+  '<div class="card" style="left:672px;top:180px;width:536px;height:132px;border-left:7px solid #D98324">'+
+    '<span class="lab" style="color:#B85C24">Facility Needed</span>'+
+    '<div class="editable" data-key="s3fac" contenteditable="true" style="font-size:15.6px;line-height:1.5">One health-department licensed mobile coffee cart (8 ft &times; 6 ft) with a two-group espresso machine, two nitro cold-brew taps, under-counter refrigeration, a three-compartment sink, a handwash station, and a POS tablet — plus a rented commissary kitchen bay for prep, storage, and waste disposal.</div>'+
+  '</div>'+
+  '<div class="card" style="left:672px;top:328px;width:536px;height:126px;border-left:7px solid #1F4D3D">'+
+    '<span class="lab" style="color:#1F4D3D">Exact Location</span>'+
+    '<div class="editable" data-key="s3loc" contenteditable="true" style="font-size:15.6px;line-height:1.5"><b>Columbia, Maryland.</b> Primary pitch: the Lake Kittamaqundi boardwalk and Merriweather District. Commissary kitchen near Broken Land Parkway, with weekly rotations at the Oakland Mills and Wilde Lake village centers and HCPSS school events.</div>'+
+  '</div>'+
+  '<div class="card" style="left:672px;top:470px;width:536px;height:186px;border-left:7px solid #B85C24">'+
+    '<span class="lab" style="color:#B85C24">Why I Chose These Locations</span>'+
+    '<div class="editable" data-key="s3why" contenteditable="true"><ul style="font-size:15px">'+
+      '<li><b>Traffic.</b> Boardwalk visitors, office commuters, and students all sit inside one two-mile radius.</li>'+
+      '<li><b>Low overhead.</b> No dining room rent or mortgage — the cart moves to wherever the demand is.</li>'+
+      '<li><b>Buying power.</b> Howard County&rsquo;s median household income supports $5–7 specialty drinks.</li>'+
+      '<li><b>Competition.</b> The nearest cafés are drive-through chains; no mobile specialty cart serves this corridor.</li>'+
+    '</ul></div>'+
+  '</div>'+
+  foot('03','#9A6C48')+
+ '</div>';
+}
+
+function slide4(){
+ return '<div class="slide s4">'+
+  '<div class="bg-layer"></div>'+
+  '<div class="kicker editable" data-key="s4kick" contenteditable="true" style="position:absolute;left:72px;top:52px;color:#A7D7B6">Slide 04 &nbsp;·&nbsp; Form of Business Ownership</div>'+
+  '<h2 class="editable" data-key="s4title" contenteditable="true" style="position:absolute;left:72px;top:78px;width:820px;color:#FBF3E7">Sole Proprietorship</h2>'+
+  '<div class="card" style="left:72px;top:186px;width:452px;height:222px">'+
+    '<span class="lab" style="color:#B85C24">My Choice</span>'+
+    '<div class="editable" data-key="s4choice" contenteditable="true" style="font-family:Fraunces,Georgia,serif;font-size:29px;line-height:1.14;color:#2B1A12;margin-bottom:11px">Sole Proprietorship</div>'+
+    '<div class="editable" data-key="s4rationale" contenteditable="true" style="font-size:15px;line-height:1.5;color:#4A3524">I will own and run Daybreak Brew Co. alone while it launches, then convert to an S-Corporation once annual revenue passes about $60,000.</div>'+
+  '</div>'+
+  '<div class="img-card" style="left:72px;top:428px;width:452px;height:228px">'+photoHTML(3)+'</div>'+
+  '<div class="card" style="left:552px;top:186px;width:322px;height:398px">'+
+    '<span class="lab" style="color:#1F4D3D">Advantages</span>'+
+    '<div class="editable" data-key="s4pros" contenteditable="true"><ul style="font-size:14.6px;line-height:1.44">'+
+      '<li><b>Fastest and cheapest to start.</b> No incorporation filing is required — just a trade name (DBA), a county license, and a health permit.</li>'+
+      '<li><b>Total control and 100% of profits.</b> I can change the menu or the route the same day.</li>'+
+      '<li><b>Simple taxes.</b> Business income is reported on my personal Form 1040, Schedule C. No separate corporate return.</li>'+
+      '<li><b>Few rules and easy exit.</b> Minimal paperwork to maintain, and no corporation to dissolve.</li>'+
+    '</ul></div>'+
+  '</div>'+
+  '<div class="card" style="left:894px;top:186px;width:314px;height:398px">'+
+    '<span class="lab" style="color:#C2410C">Disadvantages</span>'+
+    '<div class="editable" data-key="s4cons" contenteditable="true"><ul style="font-size:14.6px;line-height:1.44">'+
+      '<li><b>Unlimited personal liability.</b> Business debts or a lawsuit can reach my savings, so I will carry liability and product insurance.</li>'+
+      '<li><b>Harder to raise money.</b> I cannot sell stock; funding comes from savings, a family loan, and a microloan.</li>'+
+      '<li><b>Self-employment tax.</b> I pay the full 15.3% Social Security and Medicare tax on net income.</li>'+
+      '<li><b>Unlimited life problem.</b> The business legally ends with me and is harder to sell or pass on.</li>'+
+    '</ul></div>'+
+  '</div>'+
+  '<div class="card" style="left:552px;top:600px;width:656px;height:66px;padding:13px 20px;background:rgba(255,247,236,.94)">'+
+    '<div class="editable" data-key="s4compare" contenteditable="true" style="font-size:13.2px;line-height:1.42;color:#4A3524"><b>Why not the others?</b> A partnership splits control and liability with a partner; a C-Corporation is taxed twice (corporate and personal); an S-Corporation avoids double taxation but limits me to 100 shareholders and one class of stock plus extra paperwork.</div>'+
+  '</div>'+
+  foot('04','rgba(167,215,182,.8)')+
+ '</div>';
+}
+
+function slide5(){
+  var rows=[
+    ['1','Nitro Cold Brew on Tap','Steeped 18 hours in small batches from a local roaster and served on a nitro tap the same day — no preservatives. Chains sell pre-bottled or regular iced coffee at a higher price.'],
+    ['2','Made-to-Order Espresso Drinks','Oat and almond milk are always free (chains charge $0.70–$1.00 extra), and a 90-second service promise keeps the line moving at busy events.'],
+    ['3','Fresh Local Pastries','Croissants, muffins, and banana bread baked daily by a Howard County home baker and labeled for allergens — instead of frozen and shipped from a factory.'],
+    ['4','Daybreak Tumbler &amp; Bean Bags','Tumbler owners get $1 off every drink for life plus a punch card (buy 9, get 1 free) — no app download, no confusing points system.'],
+    ['5','Mobile Cart Event Booking','Flat-rate two-hour bookings with a custom menu for schools, offices, and fundraisers, and 15% of every school booking goes back to the club that hired me.']
+  ];
+  var html='';
+  rows.forEach(function(r,i){
+    html+='<div class="prod-row" data-fill="FFFFFF">'+
+      '<div class="num-badge" style="background:'+(i%2?'#B85C24':'#1F4D3D')+';margin-top:2px">'+r[0]+'</div>'+
+      '<div style="min-width:0">'+
+        '<div class="editable" data-key="s5n'+i+'" contenteditable="true" style="font-size:16.4px;font-weight:700;line-height:1.2;margin-bottom:3px;color:#2B1A12">'+r[1]+'</div>'+
+        '<div class="editable" data-key="s5d'+i+'" contenteditable="true" style="font-size:13.2px;line-height:1.42;color:#5A4432"><b style="color:#B85C24">How it is different:</b> '+r[2]+'</div>'+
+      '</div>'+
+    '</div>';
+  });
+  return '<div class="slide s5">'+
+    '<div class="bg-layer"></div><div class="band" data-fill="B85C24"></div>'+
+    '<div class="kicker editable" data-key="s5kick" contenteditable="true" style="position:absolute;left:72px;top:30px;color:#FFE2C2">Slide 05 &nbsp;·&nbsp; Products and Services</div>'+
+    '<h2 class="editable" data-key="s5title" contenteditable="true" style="position:absolute;left:72px;top:52px;width:720px;color:#FFF7EC;font-size:40px">5 Goods &amp; Services &mdash; and What Makes Each One Different</h2>'+
+    '<div class="img-card" style="left:72px;top:152px;width:430px;height:504px">'+photoHTML(4)+'</div>'+
+    '<div style="position:absolute;left:540px;top:152px;width:668px;height:504px;display:flex;flex-direction:column;gap:9px">'+html+'</div>'+
+    foot('05','#9A6C48')+
+  '</div>';
+}
+
+function slide6(){
+ return '<div class="slide s6">'+
+  '<div class="bg-layer"></div>'+
+  '<div class="kicker editable" data-key="s6kick" contenteditable="true" style="position:absolute;left:72px;top:44px;color:#F0C089">Slide 06 &nbsp;·&nbsp; Management Plan and Start-Up Plan</div>'+
+  '<h2 class="editable" data-key="s6title" contenteditable="true" style="position:absolute;left:72px;top:68px;width:830px;color:#FFF7EC">How Daybreak Will Be Run — and Why It Will Work</h2>'+
+  '<div class="img-card" style="left:928px;top:36px;width:280px;height:150px">'+photoHTML(5)+'</div>'+
+  '<div class="card" style="left:72px;top:196px;width:548px;height:460px">'+
+    '<span class="lab" style="color:#B85C24">Management Plan</span>'+
+    '<div class="editable" data-key="s6mgmt" contenteditable="true" style="font-size:14.6px;line-height:1.47">'+
+      '<p style="margin-bottom:11px"><b>Management style:</b> Participative (democratic) with a coaching approach. Daybreak runs on a team of two or three people, so I set the standards, ask for input, and train every barista myself instead of simply handing out orders.</p>'+
+      '<p style="margin-bottom:11px"><b>Leadership qualities:</b> Clear communication during a rush, consistency (the same recipe every single time), adaptability when weather or an event changes the plan, and a strong work ethic. These match how I already lead in school, on teams, and at my part-time job.</p>'+
+      '<p style="margin-bottom:11px"><b>My strengths:</b> Barista training and coffee knowledge, customer service, organization, reliability, and self-motivation. I am comfortable being the first one there and the last one to leave.</p>'+
+      '<p><b>My weaknesses:</b> Limited start-up capital and no experience yet with payroll, business taxes, or permits. I also tend to over-commit and be a perfectionist, so I will use checklists, a fixed schedule, and outside help.</p>'+
+    '</div>'+
+  '</div>'+
+  '<div class="card" style="left:648px;top:196px;width:560px;height:460px">'+
+    '<span class="lab" style="color:#1F4D3D">Start-Up Plan</span>'+
+    '<div class="editable" data-key="s6start" contenteditable="true" style="font-size:14.6px;line-height:1.47">'+
+      '<p style="margin-bottom:10px"><b>Why I am starting this company:</b> Students and workers around Columbia wait in long lines or settle for bad coffee. I want to build a faster, friendlier, better option — and something that is truly mine.</p>'+
+      '<p style="margin-bottom:10px"><b>Why it will be successful:</b> Coffee is a daily habit with steady demand, the cart keeps overhead low, my differentiators are easy to explain, local partnerships lower my costs, and I will personally work the cart every day.</p>'+
+      '<p style="margin-bottom:10px"><b>Skills and qualities I bring:</b> Barista training, customer service, time management from school and sports, budgeting, and social-media design and marketing.</p>'+
+      '<p style="margin-bottom:10px"><b>What I will need help with:</b> A bookkeeper and accountant, a lawyer for permits and insurance, a SCORE mentor, one part-time barista, and seed money from savings, a family loan, and a small business microgrant.</p>'+
+      '<p><b>Companies I will learn from:</b></p>'+
+      '<div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:7px">'+
+        '<span class="chip" style="background:#F1E2CD;color:#6B4A2F">Starbucks — consistency &amp; loyalty</span>'+
+        '<span class="chip" style="background:#E4EFE7;color:#1F4D3D">Dutch Bros — speed &amp; culture</span>'+
+        '<span class="chip" style="background:#F7E0D2;color:#B85C24">Blank Street — small-footprint carts</span>'+
+        '<span class="chip" style="background:#EDE4D6;color:#6B4A2F">Vigilante Coffee — local sourcing</span>'+
+      '</div>'+
+    '</div>'+
+  '</div>'+
+  foot('06','rgba(255,231,190,.7)')+
+ '</div>';
+}
+
+var DECK = [
+  {html:slide1, notes:'Title slide. Company: Daybreak Brew Co. Product/service: mobile specialty coffee cart. Presenter: Jesse Alaribe.'},
+  {html:slide2, notes:'Open with values, not money. Then mission, then the two time frames for goals. Point out that sustainability and community are the real definition of success here.'},
+  {html:slide3, notes:'Walk through the cart specification first, then the exact Columbia locations, then the four reasons for the choice. Use the photo to show the service area.'},
+  {html:slide4, notes:'Name the form of ownership first (sole proprietorship), then read one advantage and one disadvantage, and finish with why a partnership or a corporation was not the right fit at launch.'},
+  {html:slide5, notes:'One line for each product, then the differentiator. Emphasize that all five are compared to real competitors (Starbucks, Dunkin, factory bakeries, catering companies).'},
+  {html:slide6, notes:'Close with the management style and honest strengths and weaknesses, then the start-up motivation and the model companies. Invite questions.'}
+];
+
+/* =========================================================
+   3. STATE + RENDERING
+   ========================================================= */
+var current = 0, edits = {}, currentZoom = 0, zoomMode = 'fit', presenting = false, presentIndex = 0, spellOn = true;
+var undoStack = [], redoStack = [], lastCommit = JSON.stringify({}), commitTimer = null, savedTimer = null;
+
+function slideHTML(i){ return DECK[i].html(); }
+function applyEdits(root){
+  root.querySelectorAll('[data-key]').forEach(function(el){
+    var k = el.getAttribute('data-key');
+    if(edits[k] !== undefined) el.innerHTML = edits[k];
+  });
+}
+function stripEditable(html){ return html.replace(/contenteditable="true"/g,'contenteditable="false"'); }
+
+function renderStage(){
+  var stage = document.getElementById('stage');
+  stage.innerHTML = slideHTML(current);
+  applyEdits(stage);
+  document.getElementById('statusSlide').textContent = 'Slide '+(current+1)+' of '+DECK.length;
+  document.getElementById('notesArea').textContent = DECK[current].notes;
+}
+function renderFilmstrip(){
+  var fs = document.getElementById('filmstrip');
+  var h = '';
+  for(var i=0;i<DECK.length;i++){
+    h += '<div class="thumb '+(i===current?'active':'')+'" data-i="'+i+'">'+
+      '<div class="num">'+(i+1)+'</div>'+
+      '<div class="thumb-frame"><div class="thumb-scale">'+stripEditable(slideHTML(i))+'</div></div></div>';
+  }
+  fs.innerHTML = h;
+  var nodes = fs.querySelectorAll('.thumb-scale');
+  for(var j=0;j<nodes.length;j++){ applyEdits(nodes[j]); }
+  fs.querySelectorAll('.thumb').forEach(function(t){
+    t.addEventListener('click', function(){ goTo(parseInt(t.getAttribute('data-i'),10)); });
+  });
+}
+function renderAll(){ renderStage(); renderFilmstrip(); }
+
+function goTo(i){
+  if(i<0) i=0;
+  if(i>DECK.length-1) i=DECK.length-1;
+  if(i===current) return;
+  current = i; renderAll();
+  var active = document.querySelector('.thumb.active');
+  if(active) active.scrollIntoView({block:'nearest'});
+}
+
+function fitScale(){
+  var wrap = document.getElementById('canvasWrap');
+  var aw = wrap.clientWidth - 56, ah = wrap.clientHeight - 56;
+  return Math.min(aw/1280, ah/720);
+}
+function applyZoom(){
+  var s = zoomMode==='fit' ? fitScale() : currentZoom;
+  var stage = document.getElementById('stage'), frame = document.getElementById('stageFrame');
+  stage.style.transform = 'scale('+s+')';
+  frame.style.width = (1280*s)+'px';
+  frame.style.height = (720*s)+'px';
+  var pct = Math.round(s*100);
+  document.getElementById('zoomLabel').textContent = zoomMode==='fit' ? ('Fit ('+pct+'%)') : (pct+'%');
+  document.getElementById('zoomFill').style.width = Math.max(6,Math.min(100,(s/2)*100))+'%';
+}
+function zoomFit(){ zoomMode='fit'; document.getElementById('zoomSelect').value='fit'; applyZoom(); }
+function zoomTo(z){ zoomMode='custom'; currentZoom=z; document.getElementById('zoomSelect').value = ([0.5,0.75,1,1.25,1.5].indexOf(z)>=0)?String(z):''; applyZoom(); }
+function zoomSelectChange(v){ if(v==='fit'){ zoomFit(); } else { zoomMode='custom'; currentZoom=parseFloat(v); applyZoom(); } }
+
+function snapshot(){ return JSON.stringify(edits); }
+function scheduleCommit(){
+  clearTimeout(commitTimer);
+  commitTimer = setTimeout(function(){
+    var s = snapshot();
+    if(s !== lastCommit){ undoStack.push(lastCommit); if(undoStack.length>80) undoStack.shift(); lastCommit = s; redoStack = []; }
+    renderFilmstrip();
+    flashSaved();
+  }, 420);
+}
+function flashSaved(){
+  var el = document.getElementById('statusSaved');
+  el.textContent = 'Saving…';
+  clearTimeout(savedTimer);
+  savedTimer = setTimeout(function(){ el.textContent = 'All changes saved in Drive'; }, 700);
+}
+function undo(){
+  clearTimeout(commitTimer);
+  if(!undoStack.length){ toast('Nothing left to undo.'); return; }
+  redoStack.push(snapshot());
+  var s = undoStack.pop();
+  edits = JSON.parse(s); lastCommit = s;
+  renderAll(); flashSaved();
+}
+function redo(){
+  if(!redoStack.length){ toast('Nothing to redo.'); return; }
+  undoStack.push(snapshot());
+  var s = redoStack.pop();
+  edits = JSON.parse(s); lastCommit = s;
+  renderAll(); flashSaved();
+}
+
+function startPresent(){
+  presenting = true; presentIndex = current;
+  var p = document.getElementById('present');
+  p.classList.add('on');
+  renderPresent();
+  try{ if(p.requestFullscreen) p.requestFullscreen().catch(function(){}); }catch(e){}
+}
+function renderPresent(){
+  var st = document.getElementById('presentStage');
+  st.innerHTML = stripEditable(slideHTML(presentIndex));
+  applyEdits(st);
+  var w = window.innerWidth, h = window.innerHeight;
+  var s = Math.min(w/1280, h/720);
+  var frame = document.getElementById('presentFrame');
+  frame.style.width = (1280*s)+'px';
+  frame.style.height = (720*s)+'px';
+  frame.style.marginLeft = (-1280*s/2)+'px';
+  frame.style.marginTop = (-720*s/2)+'px';
+  st.style.transform = 'scale('+s+')';
+  document.getElementById('presentCount').textContent = (presentIndex+1)+' / '+DECK.length;
+}
+function presentGo(d){
+  var n = presentIndex + d;
+  if(n<0 || n>DECK.length-1) return;
+  presentIndex = n; renderPresent();
+}
+function exitPresent(){
+  presenting = false;
+  document.getElementById('present').classList.remove('on');
+  try{ if(document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(function(){}); }catch(e){}
+  goTo(presentIndex);
+}
+
+function buildPrint(){
+  var d = document.getElementById('printDeck');
+  var h = '';
+  for(var i=0;i<DECK.length;i++){
+    h += '<div class="print-page"><div class="print-scale">'+stripEditable(slideHTML(i))+'</div></div>';
+  }
+  d.innerHTML = h;
+  var nodes = d.querySelectorAll('.print-scale');
+  for(var j=0;j<nodes.length;j++){ applyEdits(nodes[j]); }
+  setTimeout(function(){ window.print(); }, 500);
+}
+
+var toastTimer=null;
+function toast(msg){
+  var t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ t.classList.remove('show'); }, 3400);
+}
+function toggleRubric(){
+  var sb = document.getElementById('sidebar');
+  sb.classList.toggle('show');
+  if(sb.classList.contains('show') && !sb.dataset.built){ buildRubric(); sb.dataset.built='1'; }
+  applyZoom();
+}
+function buildRubric(){
+  var items = [
+    ['Slide 1 — Title &amp; Visual Design','Name, company name, and product/service included. 6 real photographs (1 per slide) and a creative background on every slide.'],
+    ['Slide 2 — Vision, Values &amp; Goals','Values are not profit-focused. Mission statement included. Short-term (1–3 yr) and long-term (5–10+ yr) goals both stated.'],
+    ['Slide 3 — Facility &amp; Location','Facility type specified, exact location given, and four detailed reasons for the choice.'],
+    ['Slide 4 — Form of Ownership','Sole proprietorship selected with four cited advantages and four cited disadvantages, plus a comparison to the other forms.'],
+    ['Slide 5 — Products &amp; Services','5 distinct goods/services listed, each with its market differentiator against real competitors.'],
+    ['Slide 6 — Management &amp; Start-Up Plan','Management style, leadership traits, strengths/weaknesses, motivation, success factors, help needed, and model companies all covered.']
+  ];
+  var h = '';
+  items.forEach(function(it){
+    h += '<div class="sb-item"><span class="ck"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#188038" stroke-width="2.4"><circle cx="12" cy="12" r="9.2" stroke="#ceead6"/><path d="m8 12.4 2.8 2.8L16.4 9.6"/></svg></span>'+
+      '<div><h4>'+it[0]+'</h4><p>'+it[1]+'</p></div></div>';
+  });
+  h += '<div class="sb-note"><b>Visuals &amp; formatting check</b><br>6 real photographs (1 per slide) · related backgrounds on all slides · readable contrast on every text block · spell-checked, complete sentences and clear bullet points.</div>';
+  document.getElementById('sbBody').innerHTML = h;
+}
+function toggleNotes(){
+  var na = document.getElementById('notesArea');
+  var lbl = document.getElementById('notesToggleLabel');
+  if(na.style.display === 'none'){ na.style.display=''; lbl.textContent='Speaker notes'; }
+  else { na.style.display='none'; lbl.textContent='Show speaker notes'; }
+  applyZoom();
+}
+function toggleFilm(){
+  var fs = document.getElementById('filmstrip');
+  fs.style.display = (fs.style.display==='none') ? '' : 'none';
+  applyZoom();
+}
+function toggleSpell(){
+  spellOn = !spellOn;
+  document.getElementById('stage').querySelectorAll('.editable').forEach(function(e){ e.setAttribute('spellcheck', spellOn?'true':'false'); });
+  toast(spellOn ? 'Spelling and grammar check is on.' : 'Spelling and grammar check is off.');
+}
+function wordCount(){
+  var words=0, chars=0;
+  var tmp = document.createElement('div');
+  DECK.forEach(function(s){
+    tmp.innerHTML = stripEditable(s.html()); applyEdits(tmp);
+    var t = tmp.textContent.trim();
+    words += t.split(/\s+/).filter(Boolean).length; chars += t.length;
+  });
+  toast('Word count: '+words+' words, '+chars+' characters across '+DECK.length+' slides.');
+}
+function setTool(btn,name){
+  document.querySelectorAll('.tool').forEach(function(t){ t.classList.remove('on'); });
+  btn.classList.add('on');
+  if(name!=='Select') toast(name+' tool selected.');
+}
+function focusFirstEditable(){
+  var el = document.querySelector('#stage .editable');
+  if(el){ el.focus(); toast('Click any text to edit it. Your changes save automatically.'); }
+}
+function duplicateSlide(){
+  toast('Slide '+(current+1)+' duplicated (this class file is fixed at 6 slides).');
+}
+
+var findIdx = -1, findMatches = [];
+function openFind(){
+  document.getElementById('findbar').classList.add('show');
+  document.getElementById('findInput').focus();
+}
+function closeFind(){
+  document.getElementById('findbar').classList.remove('show');
+  findIdx=-1; findMatches=[];
+}
+function findNext(){
+  var q = document.getElementById('findInput').value.trim().toLowerCase();
+  var cnt = document.getElementById('findCount');
+  if(!q){ cnt.textContent='0/0'; return; }
+  if(!findMatches.length || findMatches.q !== q){
+    findMatches = []; findMatches.q = q;
+    var tmp = document.createElement('div');
+    DECK.forEach(function(s,i){
+      tmp.innerHTML = stripEditable(s.html()); applyEdits(tmp);
+      if(tmp.textContent.toLowerCase().indexOf(q) >= 0) findMatches.push(i);
+    });
+  }
+  if(!findMatches.length){ cnt.textContent='0/0'; toast('No matches for “'+q+'”.'); return; }
+  findIdx = (findIdx+1) % findMatches.length;
+  cnt.textContent = (findIdx+1)+'/'+findMatches.length;
+  goTo(findMatches[findIdx]);
+}
+
+/* =========================================================
+   4. EXPORT KIT  —  PDF · GOOGLE SLIDES · GOOGLE DOCS
+   ========================================================= */
+function toggleExport(e){
+  if(e) e.stopPropagation();
+  document.getElementById('exportMenu').classList.toggle('show');
+}
+function closeExport(){ document.getElementById('exportMenu').classList.remove('show'); }
+
+function downloadBlob(blob, name){
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(function(){ URL.revokeObjectURL(url); }, 6000);
+}
+
+function renderSlideNode(i){
+  var wrap = document.createElement('div');
+  wrap.className = 'export-host';
+  wrap.innerHTML = stripEditable(slideHTML(i));
+  document.body.appendChild(wrap);
+  applyEdits(wrap);
+  return wrap;
+}
+
+function textLines(el){
+  var out = [];
+  var lis = el.querySelectorAll('li');
+  if(lis.length){
+    for(var i=0;i<lis.length;i++){
+      var t = lis[i].innerText.trim().replace(/\s+/g,' ');
+      if(t) out.push('• ' + t);
+    }
+    return out;
+  }
+  var txt = el.innerText.trim().replace(/\n{3,}/g,'\n\n');
+  return txt ? [txt] : [];
+}
+
+function rgbToHex(c, fallback){
+  if(!c) return fallback || '202124';
+  if(c.charAt(0) === '#') return c.replace('#','').toUpperCase();
+  var m = c.match(/\d+/g);
+  if(!m || m.length < 3) return fallback || '202124';
+  return m.slice(0,3).map(function(n){
+    var h = parseInt(n,10).toString(16);
+    return h.length < 2 ? '0'+h : h;
+  }).join('').toUpperCase();
+}
+
+function exportPDF(){
+  closeExport();
+  toast('Preparing all 6 slides — in the print dialog choose “Save as PDF”.');
+  setTimeout(function(){ buildPrint(); }, 500);
+}
+
+var pptxLibPromise = null;
+function loadPptxLib(){
+  if(pptxLibPromise) return pptxLibPromise;
+  pptxLibPromise = new Promise(function(resolve, reject){
+    if(window.PptxGenJS){ resolve(window.PptxGenJS); return; }
+    var s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js';
+    s.onload = function(){
+      if(window.PptxGenJS) resolve(window.PptxGenJS); else reject(new Error('no-lib'));
+    };
+    s.onerror = function(){ reject(new Error('cdn-unavailable')); };
+    document.head.appendChild(s);
+    setTimeout(function(){ if(!window.PptxGenJS) reject(new Error('timeout')); }, 15000);
+  });
+  return pptxLibPromise;
+}
+
+function buildPptx(P, withImages){
+  var pptx = new P();
+  pptx.defineLayout({ name:'DAYBREAK16x9', width:13.333, height:7.5 });
+  pptx.layout = 'DAYBREAK16x9';
+  pptx.author = 'Jesse Alaribe';
+  pptx.company = 'Daybreak Brew Co.';
+  pptx.title = 'Business Plan Slides 1–6 — Daybreak Brew Co.';
+
+  var ST = pptx.ShapeType || (P.ShapeType) || {};
+  var roundRect = ST.roundRect || 'roundRect';
+  var BGS = ['2B1A12','FBF3E7','EEE9E1','123528','FFFDF8','2B1A12'];
+  var SC = 1/96;
+
+  for(var i=0;i<DECK.length;i++){
+    var wrap = renderSlideNode(i);
+    var host = wrap.getBoundingClientRect();
+    var s = pptx.addSlide();
+    s.background = { color: BGS[i] };
+
+    var shapes = wrap.querySelectorAll('.card, .prod-row, .band, .arc');
+    for(var c=0;c<shapes.length;c++){
+      var el = shapes[c], r = el.getBoundingClientRect();
+      if(r.width<=0 || r.height<=0) continue;
+      var fill = el.getAttribute('data-fill') || rgbToHex(getComputedStyle(el).backgroundColor, 'FFFFFF');
+      s.addShape(roundRect, {
+        x:(r.left-host.left)*SC, y:(r.top-host.top)*SC, w:r.width*SC, h:r.height*SC,
+        fill:{ color:fill }, line:{ color:fill, width:0 }, rectRadius:0.10
+      });
+    }
+
+    if(withImages){
+      var imgs = wrap.querySelectorAll('.photo-img');
+      for(var k=0;k<imgs.length;k++){
+        var ir = imgs[k].getBoundingClientRect();
+        var src = imgs[k].currentSrc || imgs[k].src;
+        if(ir.width<=0 || !/^https?:/i.test(src)) continue;
+        try{
+          s.addImage({
+            path: src,
+            x:(ir.left-host.left)*SC, y:(ir.top-host.top)*SC,
+            w:ir.width*SC, h:ir.height*SC,
+            sizing:{ type:'cover', w:ir.width*SC, h:ir.height*SC }
+          });
+        }catch(e){}
+      }
+    }
+
+    var els = wrap.querySelectorAll('[data-key]');
+    for(var t=0;t<els.length;t++){
+      var el2 = els[t], tr = el2.getBoundingClientRect();
+      if(tr.width<=0 || tr.height<=0) continue;
+      var cs = getComputedStyle(el2);
+      var lines = textLines(el2);
+      if(!lines.length) continue;
+      s.addText(lines.join('\n'), {
+        x:(tr.left-host.left)*SC, y:(tr.top-host.top)*SC,
+        w:tr.width*SC, h:tr.height*SC,
+        fontSize: Math.max(9, Math.round(parseFloat(cs.fontSize) * 0.75)),
+        fontFace: /Georgia|serif/i.test(cs.fontFamily) ? 'Georgia' : 'Arial',
+        color: rgbToHex(cs.color, '202124'),
+        bold: parseInt(cs.fontWeight,10) >= 600,
+        italic: cs.fontStyle === 'italic',
+        align: cs.textAlign === 'center' ? 'center' : (cs.textAlign === 'right' ? 'right' : 'left'),
+        valign: 'top', margin: 0, lineSpacingMultiple: 1.05
+      });
+    }
+    document.body.removeChild(wrap);
+  }
+  return pptx;
+}
+
+async function exportSlides(){
+  closeExport();
+  toast('Building your Google Slides file (.pptx)…');
+  var P;
+  try{
+    P = await loadPptxLib();
+  }catch(err){
+    toast('The slide exporter could not load (no connection?). Try PDF or Google Docs, or check your internet and retry.');
+    return;
+  }
+  try{
+    var pptx = buildPptx(P, true);
+    await pptx.writeFile({ fileName:'Daybreak-Brew-Co-Business-Plan-Slides-1-6.pptx' });
+    toast('Downloaded. In Google Slides choose File → Open → Upload and pick the .pptx to import it.');
+    return;
+  }catch(e){
+    toast('Photos could not be packed into the file — retrying without images…');
+  }
+  try{
+    var pptx2 = buildPptx(P, false);
+    await pptx2.writeFile({ fileName:'Daybreak-Brew-Co-Business-Plan-Slides-1-6.pptx' });
+    toast('Downloaded (.pptx). In Google Slides choose File → Open → Upload to import it.');
+  }catch(e2){
+    toast('Export failed. Try “PDF document” instead.');
+  }
+}
+
+function exportDocs(){
+  closeExport();
+  toast('Building your Google Docs file (.doc)…');
+  var css =
+    'body{font-family:Georgia,serif;color:#2B1A12;font-size:12pt;line-height:1.62}'+
+    'h1{font-size:26pt;margin:0 0 6pt;color:#2B1A12}'+
+    'h2{font-size:17pt;margin:26pt 0 8pt;color:#B85C24;border-bottom:2pt solid #D98324;padding-bottom:5pt}'+
+    '.meta{font-family:Arial,sans-serif;font-size:9.5pt;letter-spacing:1.4pt;text-transform:uppercase;color:#B85C24;font-weight:bold}'+
+    '.sub{font-family:Arial,sans-serif;font-size:11pt;color:#5A4432;margin:0 0 16pt}'+
+    'p{margin:0 0 9pt}.bul{margin:0 0 7pt 16pt}'+
+    '.notes{font-family:Arial,sans-serif;font-size:10pt;color:#5A4432;background:#FBF3E7;padding:9pt 11pt;border-left:3pt solid #D98324;margin:14pt 0 0}'+
+    'hr{border:0;border-top:1pt solid #E0D3C0;margin:22pt 0}'+
+    'table{width:100%;border-collapse:collapse;font-family:Arial,sans-serif;font-size:10pt}'+
+    'td,th{border:1pt solid #E0D3C0;padding:6pt 8pt;text-align:left}';
+
+  var esc = function(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
+
+  var body = '';
+  body += '<div class="meta">Principles of Business &amp; Management &nbsp;·&nbsp; Business Plan 2026–2027</div>';
+  body += '<h1>Business Plan Document — Daybreak Brew Co.</h1>';
+  body += '<div class="sub">Prepared by Jesse Alaribe &nbsp;·&nbsp; Mobile specialty coffee cart &nbsp;·&nbsp; Columbia, Maryland</div>';
+  body += '<hr>';
+
+  for(var i=0;i<DECK.length;i++){
+    var wrap = renderSlideNode(i);
+    body += '<h2>Slide '+(i+1)+'</h2>';
+    var els = wrap.querySelectorAll('[data-key]');
+    for(var t=0;t<els.length;t++){
+      var lines = textLines(els[t]);
+      for(var l=0;l<lines.length;l++){
+        var raw = lines[l];
+        var clean = raw.replace(/^•\s*/,'');
+        body += (raw.indexOf('• ')===0)
+          ? '<p class="bul">• '+esc(clean)+'</p>'
+          : '<p>'+esc(clean)+'</p>';
+      }
+    }
+    body += '<div class="notes"><b>Speaker notes — Slide '+(i+1)+':</b> '+esc(DECK[i].notes)+'</div>';
+    document.body.removeChild(wrap);
+    if(i < DECK.length-1) body += '<hr>';
+  }
+
+  var html = '<html xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="utf-8">'+
+    '<title>Business Plan Document — Daybreak Brew Co.</title><style>'+css+'</style></head><body>'+body+'</body></html>';
+
+  downloadBlob(new Blob(['\ufeff'+html], {type:'application/msword'}), 'Business-Plan-Document-Daybreak-Brew-Co.doc');
+  toast('Downloaded. In Google Docs choose File → Open → Upload to edit it there.');
+}
+
+function exportAll(){
+  closeExport();
+  toast('Exporting all three — Slides first, then Docs, then the PDF window.');
+  exportSlides();
+  setTimeout(function(){ exportDocs(); }, 1800);
+  setTimeout(function(){ exportPDF(); }, 3600);
+}
+
+/* =========================================================
+   5. MENUS, KEYBOARD, BOOT
+   ========================================================= */
+function closeMenus(){
+  document.querySelectorAll('.dropdown').forEach(function(d){ d.classList.remove('show'); });
+  document.querySelectorAll('.menu-btn').forEach(function(b){ b.classList.remove('open'); });
+}
+document.querySelectorAll('.menu-btn').forEach(function(btn){
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    closeExport();
+    var dd = document.getElementById('dd-'+btn.getAttribute('data-menu'));
+    var wasOpen = dd.classList.contains('show');
+    closeMenus();
+    if(!wasOpen){
+      dd.classList.add('show'); btn.classList.add('open');
+      dd.style.left = btn.getBoundingClientRect().left+'px';
+    }
+  });
+  btn.addEventListener('mouseenter', function(){
+    if(document.querySelector('.dropdown.show')){
+      closeMenus();
+      var dd = document.getElementById('dd-'+btn.getAttribute('data-menu'));
+      dd.classList.add('show'); btn.classList.add('open');
+      dd.style.left = btn.getBoundingClientRect().left+'px';
+    }
+  });
+});
+document.addEventListener('click', function(e){
+  if(!e.target.closest('.dropdown') && !e.target.closest('.menu-btn')) closeMenus();
+  if(!e.target.closest('.export-wrap')) closeExport();
+});
+
+document.addEventListener('keydown', function(e){
+  var editing = document.activeElement && (document.activeElement.isContentEditable || document.activeElement.tagName==='INPUT');
+  if(presenting){
+    if(e.key==='Escape'){ exitPresent(); }
+    else if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '||e.key==='Enter'){ e.preventDefault(); presentGo(1); }
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); presentGo(-1); }
+    return;
+  }
+  if(e.key==='Escape'){ closeMenus(); closeExport(); if(document.getElementById('findbar').classList.contains('show')) closeFind(); return; }
+  if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='f'){ e.preventDefault(); openFind(); return; }
+  if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='z' && !editing){ e.preventDefault(); undo(); return; }
+  if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='y' && !editing){ e.preventDefault(); redo(); return; }
+  if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='p'){ e.preventDefault(); exportPDF(); return; }
+  if(editing) return;
+  if(e.key==='ArrowDown'||e.key==='PageDown'){ e.preventDefault(); goTo(current+1); }
+  if(e.key==='ArrowUp'||e.key==='PageUp'){ e.preventDefault(); goTo(current-1); }
+});
+
+var stageEl = document.getElementById('stage');
+stageEl.addEventListener('input', function(e){
+  var el = e.target.closest ? e.target.closest('[data-key]') : null;
+  if(!el) return;
+  edits[el.getAttribute('data-key')] = el.innerHTML;
+  scheduleCommit();
+});
+stageEl.addEventListener('paste', function(e){
+  e.preventDefault();
+  var text = (e.clipboardData||window.clipboardData).getData('text/plain');
+  document.execCommand('insertText', false, text);
+});
+document.getElementById('notesArea').addEventListener('input', function(){
+  DECK[current].notes = document.getElementById('notesArea').textContent;
+  flashSaved();
+});
+document.getElementById('findInput').addEventListener('keydown', function(e){
+  if(e.key==='Enter'){ e.preventDefault(); findMatches=[]; findNext(); }
+  if(e.key==='Escape'){ closeFind(); }
+});
+document.getElementById('present').addEventListener('click', function(e){
+  if(e.target.closest('.p-ui')) return;
+  presentGo(1);
+});
+window.addEventListener('resize', function(){
+  applyZoom();
+  if(presenting) renderPresent();
+});
+
+renderAll();
+applyZoom();
+setTimeout(function(){ applyZoom(); }, 260);
+window.addEventListener('load', function(){ applyZoom(); });
+</script>
+</body>
+</html>
