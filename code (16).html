@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daybreak Brew Co. — Business Plan Slides 1–6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ APP SHELL ============ */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;background:#F4EDE3;color:#2B1A12;
+  display:flex;flex-direction:column;overflow:hidden}
+button{font-family:inherit;border:0;background:none;color:inherit;cursor:pointer}
+
+.topbar{height:62px;flex:none;display:flex;align-items:center;gap:14px;padding:0 20px;
+  background:#FFFDF8;border-bottom:1px solid #E7DCCB}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em;font-size:15px}
+.brand .dot{width:26px;height:26px;border-radius:8px;background:#C97B3E;color:#FFF7EC;
+  display:flex;align-items:center;justify-content:center;font-family:Fraunces,serif;font-size:15px}
+.docname{width:min(360px,34vw);border:1px solid transparent;border-radius:9px;padding:9px 12px;font-size:13.5px;
+  font-weight:500;color:#2B1A12;background:#F4EDE3}
+.docname:focus{outline:none;border-color:#C97B3E;background:#fff}
+.spacer{flex:1}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:22px;font-size:13px;font-weight:600}
+.btn.ghost{color:#5C4433;background:#F0E7D9}
+.btn.ghost:hover{background:#E8DCC8}
+.btn.solid{color:#FFF7EC;background:#2B1A12}
+.btn.solid:hover{background:#3D2418}
+.btn.accent{color:#FFF7EC;background:#C97B3E}
+.btn.accent:hover{background:#B96C33}
+
+.workspace{flex:1;display:flex;min-height:0}
+.rail{width:212px;flex:none;background:#EFE6D8;border-right:1px solid #E2D5C1;padding:14px 12px;overflow:auto}
+.rail h4{margin:2px 4px 10px;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#9A8067;font-weight:600}
+.thumb{width:188px;height:105.75px;margin:0 auto 12px;border-radius:9px;overflow:hidden;position:relative;
+  box-shadow:0 2px 8px rgba(43,26,18,.12);cursor:pointer;border:2px solid transparent;background:#fff}
+.thumb.active{border-color:#C97B3E;box-shadow:0 6px 18px rgba(201,123,62,.32)}
+.thumb .mini{position:absolute;top:0;left:0;width:1280px;height:720px;transform:scale(.146484);
+  transform-origin:top left;pointer-events:none}
+.thumb .idx{position:absolute;right:7px;bottom:6px;font-size:10px;font-weight:600;color:#FFF7EC;
+  background:rgba(43,26,18,.55);padding:2px 7px;border-radius:20px}
+
+.stagewrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:22px;min-width:0;position:relative}
+#stage{width:1280px;height:720px;flex:none;border-radius:12px;overflow:hidden;
+  box-shadow:0 26px 60px rgba(43,26,18,.22);transform-origin:center center}
+.hint{margin-top:16px;font-size:12px;color:#9A8067;text-align:center;line-height:1.7}
+
+.notes{width:290px;flex:none;background:#FFFDF8;border-left:1px solid #E7DCCB;display:flex;flex-direction:column;padding:16px}
+.notes h4{margin:0 0 10px;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#9A8067;font-weight:600}
+.notes textarea{flex:1;resize:none;border:1px solid #E7DCCB;border-radius:11px;padding:13px;font-size:13px;
+  line-height:1.75;font-family:inherit;color:#4A3423;background:#FBF3E7}
+.notes textarea:focus{outline:none;border-color:#C97B3E;background:#fff}
+.notes .tag{margin-top:10px;font-size:11px;color:#9A8067;line-height:1.6}
+
+/* ============ EXPORT MENU ============ */
+.export-menu{position:fixed;top:58px;right:20px;width:322px;background:#FFFDF8;border-radius:14px;
+  box-shadow:0 20px 50px rgba(43,26,18,.22);border:1px solid #EADFCF;padding:8px;display:none;z-index:120}
+.export-menu.show{display:block}
+.exp-item{display:flex;gap:12px;width:100%;text-align:left;padding:11px 12px;border-radius:11px;align-items:flex-start}
+.exp-item:hover{background:#F7EFE2}
+.exp-item .t{font-size:13px;font-weight:600;color:#2B1A12}
+.exp-item .s{font-size:11px;line-height:1.55;color:#8A7361;margin-top:2px}
+.exp-sep{height:1px;background:#EFE4D3;margin:6px 8px}
+.exp-foot{padding:9px 12px 5px;font-size:10.5px;line-height:1.7;color:#A8907A}
+
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,16px);background:#2B1A12;color:#FFF7EC;
+  padding:13px 22px;border-radius:24px;font-size:13px;font-weight:500;opacity:0;pointer-events:none;
+  transition:.28s ease;z-index:300;max-width:80vw}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ============ GOOGLE DIALOG ============ */
+.gd-back{position:fixed;inset:0;background:rgba(32,33,36,.55);display:none;align-items:center;justify-content:center;z-index:260}
+.gd-back.show{display:flex}
+.gd-modal{width:572px;max-width:92vw;background:#fff;border-radius:16px;overflow:hidden;
+  box-shadow:0 24px 70px rgba(0,0,0,.35)}
+.gd-head{display:flex;align-items:center;gap:12px;padding:18px 22px 14px;border-bottom:1px solid #e8eaed}
+.gd-head h3{margin:0;font-size:17px;font-weight:500;color:#202124}
+.gd-close{margin-left:auto;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.gd-close:hover{background:#f1f3f4}
+.gd-body{padding:18px 22px 4px}
+.gd-label{font-size:12px;font-weight:500;color:#3c4043;letter-spacing:.3px;display:block;margin-bottom:6px}
+.gd-input{width:100%;border:1px solid #dadce0;border-radius:8px;padding:11px 12px;font-size:13px;color:#202124}
+.gd-input:focus{outline:none;border-color:#1a73e8;box-shadow:0 0 0 1px #1a73e8}
+.gd-help{font-size:11.5px;color:#5f6368;line-height:1.75;margin-top:9px}
+.gd-help a{color:#1a73e8}
+.gd-chk{display:flex;align-items:center;gap:9px;font-size:13px;color:#3c4043;margin:15px 0 4px;cursor:pointer}
+.gd-status{font-size:12.5px;line-height:1.75;color:#3c4043;background:#f6f9ff;border:1px solid #d6e4ff;
+  border-radius:10px;padding:11px 13px;margin:12px 0 4px;display:none}
+.gd-status.show{display:block}
+.gd-status a{color:#1a73e8;font-weight:500}
+.gd-foot{display:flex;align-items:center;gap:10px;padding:14px 22px 20px}
+.gd-link{margin-right:auto;font-size:12.5px;color:#1a73e8;text-decoration:none}
+.gd-link:hover{text-decoration:underline}
+.gd-cancel{font-size:13.5px;font-weight:500;color:#3c4043;padding:9px 18px;border-radius:18px}
+.gd-cancel:hover{background:#f1f3f4}
+.gd-save{font-size:13.5px;font-weight:500;color:#fff;background:#1a73e8;padding:10px 20px;border-radius:20px}
+.gd-save:hover{background:#1765cc}
+.gd-save[disabled]{background:#c4ddfb;cursor:default}
+
+.measure-host{position:fixed;left:-20000px;top:0;width:1280px;height:720px;overflow:hidden}
+
+/* ============ SLIDE DESIGN SYSTEM ============ */
+.slide{position:relative;width:1280px;height:720px;overflow:hidden;background:#FBF3E7;
+  font-family:Inter,sans-serif;color:#2B1A12}
+.slide.dark{background:#2B1A12;color:#FFF7EC}
+.slide .bg{position:absolute;inset:0}
+.wrap{position:relative;height:100%;padding:64px 72px 78px;display:flex;flex-direction:column}
+
+.kicker{font-size:16px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#C97B3E}
+.dark .kicker{color:#E0A472}
+.title{font-family:Fraunces,Georgia,serif;font-size:102px;line-height:.9;font-weight:600;
+  letter-spacing:-.025em;margin:20px 0 0}
+.h1{font-family:Fraunces,Georgia,serif;font-size:54px;line-height:1.04;font-weight:600;
+  letter-spacing:-.018em;margin:14px 0 0;max-width:19ch}
+.h2{font-family:Fraunces,Georgia,serif;font-size:34px;line-height:1.15;font-weight:600;margin:0}
+.lede{font-size:22px;line-height:1.55;color:#6B5241;margin-top:26px;max-width:22ch}
+.dark .lede{color:rgba(255,247,236,.78)}
+.body{font-size:18px;line-height:1.68;color:#5C4433;margin:0}
+.dark .body{color:rgba(255,247,236,.78)}
+.bul{margin:18px 0 0;padding-left:20px;font-size:18px;line-height:1.85;color:#5C4433}
+.dark .bul{color:rgba(255,247,236,.78)}
+.bul li{margin-bottom:6px}
+.lab{font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#9A8067}
+.dark .lab{color:rgba(255,247,236,.55)}
+.num{font-family:Fraunces,Georgia,serif;font-size:58px;font-weight:600;line-height:1;letter-spacing:-.02em}
+.foot{position:absolute;left:72px;right:72px;bottom:30px;display:flex;justify-content:space-between;
+  align-items:center;font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(43,26,18,.42)}
+.dark .foot{color:rgba(255,247,236,.42)}
+
+.grid{display:flex;gap:56px;height:100%;align-items:center}
+.photo{position:relative;border-radius:16px;overflow:hidden;background:#3D2418;flex:none}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo .cap{position:absolute;left:0;right:0;bottom:0;padding:34px 22px 16px;font-size:12px;
+  letter-spacing:.12em;text-transform:uppercase;color:#FFF7EC;
+  background:linear-gradient(transparent,rgba(20,11,6,.85))}
+.arc{position:absolute;width:520px;height:520px;border-radius:50%;background:#EFE3D1;right:-140px;top:-160px}
+
+.cards{display:flex;gap:22px;margin-top:34px}
+.card{background:#FFFDF8;border-radius:16px;padding:26px 24px;flex:1;box-shadow:0 12px 30px rgba(43,26,18,.09)}
+.card.dark{background:#2B1A12;color:#FFF7EC}
+.card .h2{font-size:24px}
+.card .body{font-size:15.5px;line-height:1.62;margin-top:10px}
+.card .photo{width:100%;height:150px;margin-bottom:18px}
+.card .price{font-family:Fraunces,serif;font-size:30px;font-weight:600;margin-top:14px}
+
+.stats{display:flex;gap:18px;margin-top:auto}
+.stat{background:#FFFDF8;border-radius:16px;padding:22px 24px;flex:1;box-shadow:0 10px 26px rgba(43,26,18,.08)}
+.stat .num{font-size:48px}
+.stat .lab{margin-top:9px;letter-spacing:.1em;font-size:11.5px}
+
+.chart{display:flex;align-items:flex-end;gap:26px;height:270px;margin-top:auto}
+.bar-row{flex:1;display:flex;flex-direction:column;align-items:center;gap:12px;height:100%;justify-content:flex-end}
+.bar{width:100%;border-radius:9px 9px 3px 3px;background:#C97B3E}
+.bar.g{background:#1F4D3D}
+.bar.d{background:#2B1A12}
+.bar-lab{font-size:13px;font-weight:600;color:#7A604B;letter-spacing:.08em}
+
+.prods{margin-top:30px;display:flex;flex-direction:column;gap:14px}
+.prod{display:flex;align-items:center;gap:22px;background:#FFFDF8;border-radius:14px;padding:18px 24px;
+  box-shadow:0 8px 22px rgba(43,26,18,.07)}
+.prod .nm{font-family:Fraunces,serif;font-size:23px;font-weight:600;width:270px}
+.prod .ds{font-size:15px;color:#7A604B;flex:1}
+.prod .pr{font-family:Fraunces,serif;font-size:26px;font-weight:600;color:#1F4D3D}
+
+.hbars{display:flex;flex-direction:column;gap:20px;margin-top:28px}
+.hbar-row{display:flex;align-items:center;gap:18px}
+.hbar-lab{width:190px;font-size:15px;font-weight:600;color:#5C4433}
+.hbar{height:16px;border-radius:20px;background:#C97B3E}
+.hbar.g{background:#1F4D3D}
+.hbar-val{font-family:Fraunces,serif;font-size:19px;font-weight:600}
+
+.ask{font-family:Fraunces,Georgia,serif;font-size:120px;font-weight:600;letter-spacing:-.035em;line-height:1}
+.chips{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.chip{border:1px solid rgba(255,247,236,.3);color:#FFF7EC;border-radius:30px;padding:11px 20px;font-size:14px;font-weight:500}
+
+/* ============ PRESENT MODE ============ */
+body.present .topbar,body.present .rail,body.present .notes,body.present .hint{display:none}
+body.present .stagewrap{padding:0}
+
+/* ============ PRINT ============ */
+#print{display:none}
+@page{size:13.333in 7.5in;margin:0}
+@media print{
+  body>*{display:none!important}
+  #print{display:block!important}
+  .print-slide{width:1280px;height:720px;overflow:hidden;page-break-after:always;break-after:page}
+  .print-slide:last-child{page-break-after:auto;break-after:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand"><div class="dot">D</div> Daybreak Brew Co.</div>
+  <input class="docname" id="docName" value="Business Plan Slides 1–6 — Daybreak Brew Co." aria-label="Document name">
+  <div class="spacer"></div>
+  <button class="btn ghost" id="btnNotes">Notes</button>
+  <button class="btn ghost" id="btnPresent">Present</button>
+  <button class="btn accent" id="btnExport">Export
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+</header>
+
+<div class="workspace">
+  <aside class="rail"><h4>Slides 1–6</h4><div id="thumbs"></div></aside>
+  <section class="stagewrap">
+    <div id="stage"></div>
+    <div class="hint">Click any text to edit it · ← → to move between slides · N for speaker notes · Esc to close</div>
+  </section>
+  <aside class="notes" id="notesPanel">
+    <h4>Speaker notes</h4>
+    <textarea id="notesText" placeholder="Your notes for this slide…"></textarea>
+    <div class="tag">Notes travel with the slide. They are saved in this browser and included in the PDF and Word exports.</div>
+  </aside>
+</div>
+
+<div class="export-menu" id="exportMenu">
+  <button class="exp-item" id="expPresent">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C97B3E" stroke-width="1.9"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M12 17v3M8 21h8"/></svg>
+    <div><div class="t">Present full screen</div><div class="s">Show slides 1–6 full screen. Arrow keys to move.</div></div>
+  </button>
+  <button class="exp-item" id="expPdf">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C97B3E" stroke-width="1.9"><path d="M6 2h8l4 4v16H6z"/><path d="M14 2v4h4"/></svg>
+    <div><div class="t">Download PDF</div><div class="s">One page per slide, ready to print or email.</div></div>
+  </button>
+  <button class="exp-item" id="expDoc">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C97B3E" stroke-width="1.9"><path d="M6 2h8l4 4v16H6z"/><path d="M9 11h6M9 15h6"/></svg>
+    <div><div class="t">Google Docs (.doc)</div><div class="s">All slide text and notes in one editable document.</div></div>
+  </button>
+  <div class="exp-sep"></div>
+  <button class="exp-item" id="expDrive">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 3h6l7 12h-6L9 3Z" fill="#FBBC04"/><path d="M3 18 6 13h14l-3 5H3Z" fill="#1A73E8"/><path d="M9 3 2 15l3 3 4-7-1.5-2.5L9 3Z" fill="#34A853"/></svg>
+    <div><div class="t">Google Drive — Google Slides</div><div class="s">Creates a real editable presentation in your Google Drive and opens it in Google Slides. One-time Google sign-in.</div></div>
+  </button>
+  <div class="exp-foot">Exports always use the text exactly as you left it on the slide.</div>
+</div>
+
+<div class="gd-back" id="gdModal">
+  <div class="gd-modal">
+    <div class="gd-head">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M9 3h6l7 12h-6L9 3Z" fill="#FBBC04"/><path d="M3 18 6 13h14l-3 5H3Z" fill="#1A73E8"/><path d="M9 3 2 15l3 3 4-7-1.5-2.5L9 3Z" fill="#34A853"/></svg>
+      <h3>Save to Google Drive — Google Slides</h3>
+      <button class="gd-close" id="gdClose" title="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="gd-body">
+      <label class="gd-label" for="gdInput">Google Cloud OAuth Client ID</label>
+      <input class="gd-input" id="gdInput" placeholder="1234567890-xxxx.apps.googleusercontent.com" spellcheck="false">
+      <div class="gd-help">
+        Google only lets a page write into your Drive with your own credentials, so this one step is needed once:
+        <a href="https://console.cloud.google.com/apis/library/slides.googleapis.com" target="_blank" rel="noopener">enable the Google Slides API</a>,
+        then <a href="https://console.cloud.google.com/apis/credentials" target="_blank" rel="noopener">Credentials → Create credentials → OAuth client ID → Web application</a>,
+        add this page&rsquo;s address under &ldquo;Authorized JavaScript origins&rdquo;, and paste the ID here.
+        The ID is stored in this browser only. The page must be opened from a web address (https://…), not by double-clicking the file.
+      </div>
+      <label class="gd-chk"><input type="checkbox" id="gdImgs" checked> Include the 6 photographs (Google fetches them from the web)</label>
+      <div class="gd-status" id="gdStatus"></div>
+    </div>
+    <div class="gd-foot">
+      <a class="gd-link" href="https://console.cloud.google.com/apis/credentials" target="_blank" rel="noopener">Get a Client ID</a>
+      <button class="gd-cancel" id="gdCancel">Cancel</button>
+      <button class="gd-save" id="gdSave">Save to Google Slides</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<div id="print"></div>
+
+<script>
+/* =========================================================
+   DAYBREAK BREW CO. — DECK ENGINE + EXPORTS
+   ========================================================= */
+'use strict';
+
+var PHOTOS = [
+  'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1400&q=80&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1400&q=80&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1400&q=80&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1400&q=80&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1498804103079-a6351b050096?w=1400&q=80&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=1400&q=80&auto=format&fit=crop'
+];
+
+var DECK = {
+  name: 'Business Plan Slides 1–6 — Daybreak Brew Co.',
+  slides: [
+
+  /* ---------------- 1 — COVER ---------------- */
+  { notes: 'Open with the feeling: the 7 a.m. rush, and the fact that nobody has designed coffee for it. Two bars today, six in eighteen months.',
+    html:
+    '<div class="slide dark s1">' +
+      '<div class="bg" style="background:linear-gradient(135deg,#2B1A12 0%,#3D2418 62%,#5A341F 100%)"></div>' +
+      '<div class="wrap"><div class="grid">' +
+        '<div style="flex:1">' +
+          '<div class="kicker" data-key="k1">Business plan · Spring 2026</div>' +
+          '<h1 class="title" data-key="t1">Daybreak<br>Brew Co.</h1>' +
+          '<div class="lede" data-key="l1">Slow coffee for fast mornings — a neighbourhood roastery and a grab-and-go bar built for the 7 a.m. rush.</div>' +
+          '<div style="margin-top:44px;display:flex;flex-direction:column;gap:8px">' +
+            '<div class="lab" data-key="b1">Prepared by Aanya Rao · Founder &amp; CEO</div>' +
+            '<div class="lab" data-key="b2">aanya@daybreakbrew.co · +91 98200 41120</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="photo" style="width:430px;height:520px">' +
+          '<img data-photo="0" src="' + PHOTOS[0] + '" alt="">' +
+          '<div class="cap" data-key="c1">Our first bar — Indiranagar, Bengaluru</div>' +
+        '</div>' +
+      '</div></div>' +
+      '<div class="foot"><span data-key="f1a">Daybreak Brew Co.</span><span data-key="f1b">01 / 06</span></div>' +
+    '</div>' },
+
+  /* ---------------- 2 — PROBLEM ---------------- */
+  { notes: 'Three numbers: seven-minute queues, 68% take-away, and 40% of people who walk away. This is the gap we build for.',
+    html:
+    '<div class="slide s2">' +
+      '<div class="bg" style="background:#FBF3E7"></div><div class="arc"></div>' +
+      '<div class="wrap">' +
+        '<div class="kicker" data-key="k2">The problem</div>' +
+        '<h2 class="h1" data-key="t2">Mornings are rushed. Coffee is not built for it.</h2>' +
+        '<div class="grid" style="margin-top:34px;align-items:flex-start">' +
+          '<div style="flex:1.15">' +
+            '<p class="body" data-key="p2">The speciality coffee market has spent a decade perfecting the long, slow, sit-down experience. Almost nothing has been designed for the twenty minutes before work, when people want excellent coffee and want it now.</p>' +
+            '<ul class="bul" data-key="u2">' +
+              '<li>Peak-hour queues average seven minutes at independent cafés.</li>' +
+              '<li>Take-away orders have grown 68% since 2022.</li>' +
+              '<li>One in four customers leaves without ordering when the line is long.</li>' +
+              '<li>Office catchments have almost no roastery-grade option before 9 a.m.</li>' +
+            '</ul>' +
+          '</div>' +
+          '<div class="photo" style="width:360px;height:250px">' +
+            '<img data-photo="1" src="' + PHOTOS[1] + '" alt="">' +
+            '<div class="cap" data-key="c2">07:52, a Tuesday queue</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="stats">' +
+          '<div class="stat"><div class="num" data-key="n2a">7 min</div><div class="lab" data-key="l2a">Average queue at 8 a.m.</div></div>' +
+          '<div class="stat"><div class="num" data-key="n2b">68%</div><div class="lab" data-key="l2b">Of orders are take-away</div></div>' +
+          '<div class="stat"><div class="num" data-key="n2c">1 in 4</div><div class="lab" data-key="l2c">Walk away when lines are long</div></div>' +
+          '<div class="stat"><div class="num" data-key="n2d">₹410</div><div class="lab" data-key="l2d">Average spend per customer</div></div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="foot"><span data-key="f2a">Daybreak Brew Co.</span><span data-key="f2b">02 / 06</span></div>' +
+    '</div>' },
+
+  /* ---------------- 3 — PRODUCT ---------------- */
+  { notes: 'Three things: the 90-second bar, the house beans, and the office subscription. Price points are per cup, per bag and per seat.',
+    html:
+    '<div class="slide s3">' +
+      '<div class="bg" style="background:#EEE9E1"></div>' +
+      '<div class="wrap">' +
+        '<div class="kicker" data-key="k3">What we make</div>' +
+        '<h2 class="h1" data-key="t3">One kitchen, three ways to get your morning.</h2>' +
+        '<div class="cards">' +
+          '<div class="card">' +
+            '<div class="photo"><img data-photo="2" src="' + PHOTOS[2] + '" alt=""></div>' +
+            '<div class="h2" data-key="h3a">The 90-second bar</div>' +
+            '<div class="body" data-key="b3a">A fixed menu of five drinks, pre-dialed recipes and a two-person station. Order at the door, drink in hand in ninety seconds.</div>' +
+            '<div class="price" data-key="p3a">₹180 / cup</div>' +
+          '</div>' +
+          '<div class="card">' +
+            '<div class="photo"><img data-photo="3" src="' + PHOTOS[3] + '" alt=""></div>' +
+            '<div class="h2" data-key="h3b">Daybreak house beans</div>' +
+            '<div class="body" data-key="b3b">Our own roast, ground to order and sold in 250 g bags — the same beans we pour, roasted weekly at our Bengaluru micro-roastery.</div>' +
+            '<div class="price" data-key="p3b">₹650 / bag</div>' +
+          '</div>' +
+          '<div class="card dark">' +
+            '<div class="photo"><img data-photo="4" src="' + PHOTOS[4] + '" alt=""></div>' +
+            '<div class="h2" data-key="h3c">The office subscription</div>' +
+            '<div class="body" data-key="b3c">A weekly delivery of beans, filters and two equipment services per quarter. One invoice, no procurement meeting.</div>' +
+            '<div class="price" data-key="p3c">₹6,500 / seat</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="foot"><span data-key="f3a">Daybreak Brew Co.</span><span data-key="f3b">03 / 06</span></div>' +
+    '</div>' },
+
+  /* ---------------- 4 — MARKET ---------------- */
+  { notes: 'The market is not the question — distribution is. We start with the 12 km radius we can serve from one kitchen, then city by city.',
+    html:
+    '<div class="slide dark s4">' +
+      '<div class="bg" style="background:#1F4D3D"></div>' +
+      '<div class="wrap">' +
+        '<div class="kicker" data-key="k4">Market &amp; traction</div>' +
+        '<h2 class="h1" data-key="t4" style="color:#FFF7EC">₹4,200 crore and growing 19% a year.</h2>' +
+        '<div class="grid" style="margin-top:30px;align-items:flex-start">' +
+          '<div style="flex:1">' +
+            '<p class="body" data-key="p4">Two bars, 11 months of trading, and a repeat rate that tells us the model travels. The chart is monthly revenue, in lakhs, from opening month.</p>' +
+            '<div class="chart">' +
+              '<div class="bar-row"><div class="bar" style="height:26%"></div><div class="bar-lab" data-key="x4a">Mar</div></div>' +
+              '<div class="bar-row"><div class="bar" style="height:34%"></div><div class="bar-lab" data-key="x4b">Apr</div></div>' +
+              '<div class="bar-row"><div class="bar" style="height:41%"></div><div class="bar-lab" data-key="x4c">May</div></div>' +
+              '<div class="bar-row"><div class="bar" style="height:52%"></div><div class="bar-lab" data-key="x4d">Jun</div></div>' +
+              '<div class="bar-row"><div class="bar" style="height:63%"></div><div class="bar-lab" data-key="x4e">Jul</div></div>' +
+              '<div class="bar-row"><div class="bar" style="height:78%"></div><div class="bar-lab" data-key="x4f">Aug</div></div>' +
+              '<div class="bar-row"><div class="bar" style="height:92%"></div><div class="bar-lab" data-key="x4g">Sep</div></div>' +
+              '<div class="bar-row"><div class="bar" style="height:100%"></div><div class="bar-lab" data-key="x4h">Oct</div></div>' +
+            '</div>' +
+          '</div>' +
+          '<div style="width:300px;display:flex;flex-direction:column;gap:16px">' +
+            '<div class="stat"><div class="num" data-key="n4a" style="color:#E0A472">2</div><div class="lab" data-key="l4a">Bars trading in Bengaluru</div></div>' +
+            '<div class="stat"><div class="num" data-key="n4b" style="color:#E0A472">41%</div><div class="lab" data-key="l4b">Customers who return within 7 days</div></div>' +
+            '<div class="stat"><div class="num" data-key="n4c" style="color:#E0A472">₹18.4L</div><div class="lab" data-key="l4c">Revenue in the last full month</div></div>' +
+            '<div class="stat"><div class="num" data-key="n4d" style="color:#E0A472">6</div><div class="lab" data-key="l4d">Office accounts signed this quarter</div></div>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="foot"><span data-key="f4a">Daybreak Brew Co.</span><span data-key="f4b">04 / 06</span></div>' +
+    '</div>' },
+
+  /* ---------------- 5 — MODEL ---------------- */
+  { notes: 'Unit economics: ₹180 cup, ₹61 cost, ₹119 gross margin, 2.4 cups per visit. Keep it simple — say the numbers, do not read the rows.',
+    html:
+    '<div class="slide s5">' +
+      '<div class="bg" style="background:#FFFDF8"></div>' +
+      '<div class="band" style="height:132px;background:#C97B3E;position:absolute;left:0;right:0;top:0"></div>' +
+      '<div class="wrap" style="padding-top:36px">' +
+        '<div class="kicker" data-key="k5" style="color:#FDEBD8">The model</div>' +
+        '<h2 class="h1" data-key="t5" style="color:#FFF7EC;max-width:26ch;margin-top:8px">Sixty-six percent gross margin at the counter.</h2>' +
+        '<div class="grid" style="margin-top:26px;align-items:flex-start">' +
+          '<div style="flex:1.25">' +
+            '<div class="prods">' +
+              '<div class="prod"><div class="nm" data-key="r5a">Bar coffee</div><div class="ds" data-key="s5a">₹180 per cup · 2.4 cups per visit · 22 sec service time</div><div class="pr" data-key="p5a">66%</div></div>' +
+              '<div class="prod"><div class="nm" data-key="r5b">Retail beans</div><div class="ds" data-key="s5b">₹650 per 250 g bag · 1,240 bags last month · 18% of revenue</div><div class="pr" data-key="p5b">54%</div></div>' +
+              '<div class="prod"><div class="nm" data-key="r5c">Office plans</div><div class="ds" data-key="s5c">₹6,500 per seat per year · 6 accounts · signed quarterly</div><div class="pr" data-key="p5c">61%</div></div>' +
+            '</div>' +
+            '<div class="hbars">' +
+              '<div class="hbar-row"><div class="hbar-lab" data-key="hb5a">Cost per cup</div><div class="hbar" style="width:34%"></div><div class="hbar-val" data-key="hv5a">₹61</div></div>' +
+              '<div class="hbar-row"><div class="hbar-lab" data-key="hb5b">Gross margin</div><div class="hbar g" style="width:66%"></div><div class="hbar-val" data-key="hv5b">₹119</div></div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="photo" style="width:320px;height:220px">' +
+            '<img data-photo="5" src="' + PHOTOS[5] + '" alt="">' +
+            '<div class="cap" data-key="c5">Pour-over service, weekend menu</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="foot"><span data-key="f5a">Daybreak Brew Co.</span><span data-key="f5b">05 / 06</span></div>' +
+    '</div>' },
+
+  /* ---------------- 6 — THE ASK ---------------- */
+  { notes: 'Close on the ask: ₹6 crore for eighteen months of runway and six bars. Then stop talking and take questions.',
+    html:
+    '<div class="slide dark s6">' +
+      '<div class="bg" style="background:linear-gradient(120deg,#2B1A12,#4A2C1B 70%,#2B1A12)"></div>' +
+      '<div class="wrap">' +
+        '<div class="kicker" data-key="k6">The ask</div>' +
+        '<h2 class="h1" data-key="t6" style="color:#FFF7EC;max-width:24ch">We are raising to open four more bars.</h2>' +
+        '<div class="ask" data-key="a6" style="color:#E0A472;margin-top:22px">₹6.0 crore</div>' +
+        '<div class="lab" data-key="l6" style="margin-top:10px">Seed round · 18 months of runway · 6 bars by December 2027</div>' +
+        '<div class="grid" style="margin-top:34px;align-items:flex-start">' +
+          '<div style="flex:1.1">' +
+            '<div class="hbars">' +
+              '<div class="hbar-row"><div class="hbar-lab" data-key="hb6a" style="color:rgba(255,247,236,.8)">New bars &amp; fit-out</div><div class="hbar" style="width:60%"></div><div class="hbar-val" data-key="hv6a" style="color:#FFF7EC">₹3.6 Cr</div></div>' +
+              '<div class="hbar-row"><div class="hbar-lab" data-key="hb6b" style="color:rgba(255,247,236,.8)">Roastery &amp; equipment</div><div class="hbar" style="width:22%"></div><div class="hbar-val" data-key="hv6b" style="color:#FFF7EC">₹1.3 Cr</div></div>' +
+              '<div class="hbar-row"><div class="hbar-lab" data-key="hb6c" style="color:rgba(255,247,236,.8)">Team &amp; working capital</div><div class="hbar" style="width:18%"></div><div class="hbar-val" data-key="hv6c" style="color:#FFF7EC">₹1.1 Cr</div></div>' +
+            '</div>' +
+          '</div>' +
+          '<div style="width:340px">' +
+            '<div class="body" data-key="p6">Fifteen-minute commitments only — we will spend the first 90 days on sites and staff, and share a monthly one-page update with every investor.</div>' +
+            '<div class="chips">' +
+              '<div class="chip" data-key="ch6a">Aanya Rao · Founder</div>' +
+              '<div class="chip" data-key="ch6b">aanya@daybreakbrew.co</div>' +
+              '<div class="chip" data-key="ch6c">+91 98200 41120</div>' +
+              '<div class="chip" data-key="ch6d">daybreakbrew.co</div>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="foot"><span data-key="f6a">Daybreak Brew Co.</span><span data-key="f6b">06 / 06</span></div>' +
+    '</div>' }
+  ]
+};
+
+/* ---------------- state ---------------- */
+var edits = {};
+var notes = {};
+try { edits = JSON.parse(localStorage.getItem('dbc_edits') || '{}') || {}; } catch (e) {}
+try { notes = JSON.parse(localStorage.getItem('dbc_notes') || '{}') || {}; } catch (e) {}
+
+var cur = 0;
+var stage = document.getElementById('stage');
+var thumbsBox = document.getElementById('thumbs');
+var notesText = document.getElementById('notesText');
+
+function save() {
+  try {
+    localStorage.setItem('dbc_edits', JSON.stringify(edits));
+    localStorage.setItem('dbc_notes', JSON.stringify(notes));
+    localStorage.setItem('dbc_name', document.getElementById('docName').value);
+  } catch (e) {}
+}
+try {
+  var savedName = localStorage.getItem('dbc_name');
+  if (savedName) document.getElementById('docName').value = savedName;
+} catch (e) {}
+
+function applyEdits(root) {
+  var els = root.querySelectorAll('[data-key]');
+  for (var i = 0; i < els.length; i++) {
+    var k = els[i].getAttribute('data-key');
+    if (edits[k]) els[i].innerHTML = edits[k];
+  }
+}
+
+function toast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(function () { t.classList.remove('show'); }, 3200);
+}
+
+/* ---------------- render ---------------- */
+function renderSlide(i) {
+  cur = i;
+  stage.innerHTML = DECK.slides[i].html;
+  applyEdits(stage);
+  var eds = stage.querySelectorAll('[data-key]');
+  for (var j = 0; j < eds.length; j++) {
+    eds[j].setAttribute('contenteditable', 'true');
+    eds[j].setAttribute('spellcheck', 'false');
+    eds[j].addEventListener('input', onEdit);
+    eds[j].addEventListener('blur', function () { renderThumb(cur); });
+  }
+  notesText.value = notes['n' + i] || DECK.slides[i].notes || '';
+  var t = thumbsBox.querySelectorAll('.thumb');
+  for (var k = 0; k < t.length; k++) t[k].classList.toggle('active', k === i);
+  fitStage();
+}
+
+function onEdit(e) {
+  var el = e.target.closest ? e.target.closest('[data-key]') : null;
+  if (!el) return;
+  edits[el.getAttribute('data-key')] = el.innerHTML;
+  save();
+}
+
+function renderThumb(i) {
+  var host = thumbsBox.querySelectorAll('.thumb')[i];
+  if (!host) return;
+  var mini = host.querySelector('.mini');
+  mini.innerHTML = DECK.slides[i].html;
+  applyEdits(mini);
+}
+
+function buildThumbs() {
+  thumbsBox.innerHTML = '';
+  for (var i = 0; i < DECK.slides.length; i++) {
+    var d = document.createElement('div');
+    d.className = 'thumb';
+    d.innerHTML = '<div class="mini"></div><div class="idx">' + (i + 1) + '</div>';
+    (function (idx) {
+      d.addEventListener('click', function () { renderSlide(idx); });
+    })(i);
+    thumbsBox.appendChild(d);
+    renderThumb(i);
+  }
+}
+
+function fitStage() {
+  var wrap = stage.parentNode;
+  var pad = document.body.classList.contains('present') ? 0 : 44;
+  var availW = wrap.clientWidth - pad;
+  var availH = wrap.clientHeight - pad - 34;
+  var scale = Math.min(availW / 1280, availH / 720, 1);
+  stage.style.transform = 'scale(' + scale + ')';
+}
+window.addEventListener('resize', fitStage);
+
+/* ---------------- navigation & keyboard ---------------- */
+function go(delta) {
+  var next = Math.min(DECK.slides.length - 1, Math.max(0, cur + delta));
+  if (next !== cur) renderSlide(next);
+}
+document.addEventListener('keydown', function (e) {
+  var typing = e.target && (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT' ||
+    e.target.getAttribute('contenteditable') === 'true');
+  if (e.key === 'Escape') {
+    closeExportMenu();
+    document.getElementById('gdModal').classList.remove('show');
+    if (document.body.classList.contains('present')) exitPresent();
+    return;
+  }
+  if (typing) return;
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+  if (e.key === 'n' || e.key === 'N') toggleNotes();
+  if (e.key === 'p' || e.key === 'P') enterPresent();
+});
+
+/* ---------------- notes ---------------- */
+function toggleNotes() {
+  var p = document.getElementById('notesPanel');
+  p.style.display = (p.style.display === 'none') ? 'flex' : 'none';
+  fitStage();
+}
+notesText.addEventListener('input', function () {
+  notes['n' + cur] = notesText.value;
+  save();
+});
+
+/* ---------------- present ---------------- */
+function enterPresent() {
+  closeExportMenu();
+  document.body.classList.add('present');
+  fitStage();
+  var el = document.documentElement;
+  if (el.requestFullscreen) el.requestFullscreen().catch(function () {});
+}
+function exitPresent() {
+  document.body.classList.remove('present');
+  fitStage();
+  if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(function () {});
+}
+document.addEventListener('fullscreenchange', function () {
+  if (!document.fullscreenElement && document.body.classList.contains('present')) exitPresent();
+});
+
+/* ---------------- export menu ---------------- */
+var exportMenu = document.getElementById('exportMenu');
+function closeExportMenu() { exportMenu.classList.remove('show'); }
+document.getElementById('btnExport').addEventListener('click', function (e) {
+  e.stopPropagation();
+  exportMenu.classList.toggle('show');
+});
+document.addEventListener('click', function (e) {
+  if (!exportMenu.contains(e.target)) closeExportMenu();
+});
+document.getElementById('btnPresent').addEventListener('click', enterPresent);
+document.getElementById('btnNotes').addEventListener('click', toggleNotes);
+document.getElementById('expPresent').addEventListener('click', enterPresent);
+
+function renderAllInto(container) {
+  container.innerHTML = '';
+  for (var i = 0; i < DECK.slides.length; i++) {
+    var d = document.createElement('div');
+    d.className = 'print-slide';
+    d.innerHTML = DECK.slides[i].html;
+    applyEdits(d);
+    container.appendChild(d);
+  }
+}
+
+/* ---------------- PDF ---------------- */
+document.getElementById('expPdf').addEventListener('click', function () {
+  closeExportMenu();
+  renderAllInto(document.getElementById('print'));
+  toast('Opening the print dialog — choose “Save as PDF”.');
+  setTimeout(function () { window.print(); }, 220);
+});
+
+/* ---------------- Google Docs (.doc) ---------------- */
+document.getElementById('expDoc').addEventListener('click', function () {
+  closeExportMenu();
+  var name = document.getElementById('docName').value.trim() || DECK.name;
+  var html = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word">' +
+    '<head><meta charset="utf-8"><title>' + name + '</title></head><body style="font-family:Arial,sans-serif">';
+  html += '<h1 style="font-family:Georgia,serif">' + name + '</h1>';
+  for (var i = 0; i < DECK.slides.length; i++) {
+    var host = document.createElement('div');
+    host.innerHTML = DECK.slides[i].html;
+    applyEdits(host);
+    html += '<h2 style="font-family:Georgia,serif;border-bottom:1px solid #ccc;padding-bottom:6px">Slide ' + (i + 1) + '</h2>';
+    var els = host.querySelectorAll('[data-key]');
+    for (var j = 0; j < els.length; j++) {
+      var txt = (els[j].innerText || '').trim();
+      if (!txt) continue;
+      var tag = /title|h1|h2|num|ask|nm|price/.test(els[j].className) ? 'h3' : 'p';
+      html += '<' + tag + ' style="margin:6px 0">' + txt + '</' + tag + '>';
+    }
+    var nt = (notes['n' + i] || DECK.slides[i].notes || '').trim();
+    if (nt) html += '<p style="margin:10px 0 22px;color:#777;font-style:italic"><b>Notes:</b> ' + nt + '</p>';
+  }
+  html += '</body></html>';
+
+  var blob = new Blob([html], { type: 'application/msword' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = name.replace(/[^\w\- ]+/g, '') + '.doc';
+  document.body.appendChild(a); a.click();
+  setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 800);
+  toast('Downloaded the .doc — open it with Google Docs.');
+});
+
+/* =========================================================
+   GOOGLE DRIVE — REAL GOOGLE SLIDES
+   ========================================================= */
+var GS_SCOPE = 'https://www.googleapis.com/auth/presentations';
+var GS_K = 0.5625;                        /* 1280x720 px -> 720x405 pt */
+var GS_BG = [
+  { red: 0.169, green: 0.102, blue: 0.071 },
+  { red: 0.984, green: 0.953, blue: 0.906 },
+  { red: 0.933, green: 0.914, blue: 0.882 },
+  { red: 0.122, green: 0.302, blue: 0.239 },
+  { red: 1.000, green: 0.992, blue: 0.973 },
+  { red: 0.169, green: 0.102, blue: 0.071 }
+];
+
+/* Google sign-in library */
+(function () {
+  var s = document.createElement('script');
+  s.src = 'https://accounts.google.com/gsi/client';
+  s.async = true; s.defer = true;
+  s.onerror = function () { /* handled with a clear message on click */ };
+  document.head.appendChild(s);
+})();
+
+var gdModal = document.getElementById('gdModal');
+var gdInput = document.getElementById('gdInput');
+var gdImgs = document.getElementById('gdImgs');
+var gdStatus = document.getElementById('gdStatus');
+var gdSave = document.getElementById('gdSave');
+
+function gdSetStatus(html) { gdStatus.innerHTML = html; gdStatus.classList.add('show'); }
+function gdBusy(on) {
+  gdSave.disabled = !!on;
+  gdSave.textContent = on ? 'Working…' : 'Save to Google Slides';
+}
+function gdOpen() {
+  closeExportMenu();
+  gdModal.classList.add('show');
+  try { gdInput.value = localStorage.getItem('dbc_client_id') || ''; } catch (e) {}
+  if (gdInput.value) gdSetStatus('Ready. Click “Save to Google Slides”, then approve access in the Google popup.');
+  else gdSetStatus('First-time setup: paste your Google Cloud OAuth Client ID above (details below), then click “Save to Google Slides”.');
+}
+document.getElementById('expDrive').addEventListener('click', gdOpen);
+document.getElementById('gdClose').addEventListener('click', function () { gdModal.classList.remove('show'); });
+document.getElementById('gdCancel').addEventListener('click', function () { gdModal.classList.remove('show'); });
+gdModal.addEventListener('click', function (e) { if (e.target === gdModal) gdModal.classList.remove('show'); });
+
+function gsNum(v) { return Math.round(v * 100) / 100; }
+function gsFill(str) {
+  var m = /rgba?$$([^)]+)$$/.exec(str || '');
+  if (!m) return null;
+  var p = m[1].split(',').map(function (v) { return parseFloat(v); });
+  if (p.length > 3 && p[3] === 0) return null;
+  return {
+    color: { red: p[0] / 255, green: p[1] / 255, blue: p[2] / 255 },
+    alpha: p.length > 3 ? p[3] : 1
+  };
+}
+function gsRgb(str) {
+  var f = gsFill(str);
+  return f ? f.color : { red: 0, green: 0, blue: 0 };
+}
+function gsRect(el, base, pad) {
+  var r = el.getBoundingClientRect(), b = base.getBoundingClientRect(), p = pad || 0;
+  return {
+    x: gsNum((r.left - b.left) * GS_K - p),
+    y: gsNum((r.top - b.top) * GS_K - p),
+    w: gsNum(Math.max(r.width, 6) * GS_K + p * 2),
+    h: gsNum(Math.max(r.height, 10) * GS_K + p * 2)
+  };
+}
+function gsApi(path, method, token, body) {
+  return fetch('https://slides.googleapis.com/v1/' + path, {
+    method: method,
+    headers: { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' },
+    body: body ? JSON.stringify(body) : undefined
+  }).then(function (r) {
+    return r.json().then(function (j) {
+      if (!r.ok) throw new Error((j && j.error && j.error.message) || ('HTTP ' + r.status));
+      return j;
+    });
+  });
+}
+
+/* measure the live, edited slides and turn them into Google Slides geometry */
+function gsSpec() {
+  var spec = [];
+  for (var i = 0; i < DECK.slides.length; i++) {
+    var host = document.createElement('div');
+    host.className = 'measure-host';
+    host.innerHTML = DECK.slides[i].html;
+    document.body.appendChild(host);
+    applyEdits(host);
+
+    var slideEl = host.querySelector('.slide');
+    var decor = [], boxes = [], image = null;
+
+    var dEls = host.querySelectorAll('.card, .stat, .prod, .bar, .hbar, .arc, .photo, .band');
+    for (var d = 0; d < dEls.length; d++) {
+      var f = gsFill(getComputedStyle(dEls[d]).backgroundColor);
+      if (!f) continue;
+      decor.push({
+        r: gsRect(dEls[d], slideEl, 0),
+        fill: f,
+        shape: dEls[d].classList.contains('arc') ? 'ELLIPSE' : 'RECTANGLE'
+      });
+    }
+
+    var tEls = host.querySelectorAll('[data-key]');
+    for (var t = 0; t < tEls.length; t++) {
+      var el = tEls[t], cs = getComputedStyle(el);
+      var txt = (el.innerText || '').replace(/\u00a0/g, ' ').trim();
+      if (!txt) continue;
+      boxes.push({
+        r: gsRect(el, slideEl, 3),
+        text: txt,
+        fs: gsNum(parseFloat(cs.fontSize) * GS_K),
+        bold: parseInt(cs.fontWeight, 10) >= 600 || cs.fontWeight === 'bold',
+        italic: cs.fontStyle === 'italic',
+        color: gsRgb(cs.color),
+        serif: (cs.fontFamily || '').indexOf('Fraunces') >= 0,
+        list: el.querySelectorAll('li').length > 0
+      });
+    }
+
+    var img = host.querySelector('.photo img');
+    var frame = host.querySelector('.photo');
+    if (img && frame && frame.getBoundingClientRect().width > 10) {
+      image = {
+        r: gsRect(frame, slideEl, 0),
+        url: img.getAttribute('src') || ''
+      };
+    }
+
+    document.body.removeChild(host);
+    spec.push({ decor: decor, boxes: boxes, image: image, bg: GS_BG[i] || GS_BG[1] });
+  }
+  return spec;
+}
+
+function gsStart() {
+  var cid = (gdInput.value || '').trim();
+  if (!cid) {
+    gdSetStatus('Paste your Google Cloud OAuth Client ID first — see the note below.');
+    gdInput.focus();
+    return;
+  }
+  try { localStorage.setItem('dbc_client_id', cid); } catch (e) {}
+
+  if (location.protocol === 'file:') {
+    gdSetStatus('This page is being opened directly from your computer (file://). Google sign-in only works when the page has a web address, so host it somewhere (GitHub Pages, Netlify, or run a tiny local server) and open it with https://…');
+    return;
+  }
+  if (typeof google === 'undefined' || !google.accounts || !google.accounts.oauth2) {
+    gdSetStatus('The Google sign-in library has not finished loading. Check your internet connection, wait a couple of seconds and try again.');
+    return;
+  }
+
+  gdBusy(true);
+  gdSetStatus('Waiting for Google sign-in…');
+  try {
+    var tc = google.accounts.oauth2.initTokenClient({
+      client_id: cid,
+      scope: GS_SCOPE,
+      prompt: '',
+      callback: function (resp) {
+        if (!resp || !resp.access_token) {
+          gdBusy(false);
+          gdSetStatus('Sign-in did not return a token. Please try again.');
+          return;
+        }
+        gsBuild(resp.access_token);
+      },
+      error_callback: function (err) {
+        gdBusy(false);
+        gdSetStatus('Sign-in was cancelled or blocked' + (err && err.message ? (': ' + err.message) : '.') +
+          ' If it keeps happening, check that this page’s address is listed under “Authorized JavaScript origins” in Google Cloud.');
+      }
+    });
+    tc.requestAccessToken();
+  } catch (e) {
+    gdBusy(false);
+    gdSetStatus('Could not start Google sign-in: ' + e.message);
+  }
+}
+gdSave.addEventListener('click', gsStart);
+gdInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') gsStart(); });
+
+async function gsBuild(token) {
+  var name = (document.getElementById('docName').value || '').trim() || DECK.name;
+
+  try {
+    if (document.fonts && document.fonts.ready) await document.fonts.ready;
+  } catch (e) {}
+
+  var pres;
+  try {
+    gdSetStatus('Creating “' + name + '” in your Google Drive…');
+    pres = await gsApi('presentations', 'POST', token, { title: name });
+  } catch (e) {
+    gdBusy(false);
+    gdSetStatus('Could not create the presentation: ' + e.message +
+      '. Make sure the Google Slides API is enabled for your Google Cloud project.');
+    return;
+  }
+
+  var pid = pres.presentationId;
+  var spec = gsSpec();
+  var withImgs = gdImgs.checked;
+
+  for (var i = 0; i < spec.length; i++) {
+    var s = spec[i], sid = 'slide_' + (i + 1);
+    gdSetStatus('Building slide ' + (i + 1) + ' of ' + spec.length + '…');
+
+    /* 1 — the slide + its background colour */
+    try {
+      await gsApi('presentations/' + pid + '/batchUpdate', 'POST', token, { requests: [
+        { createSlide: { objectId: sid, slideLayoutReference: { predefinedLayout: 'BLANK' } } },
+        { updatePageProperties: {
+            objectId: sid,
+            pageProperties: { pageBackgroundFill: { solidFill: { color: s.bg, alpha: 1 } } },
+            pageBackgroundFillWriteControl: 'REPLACE_ALL'
+        } }
+      ] });
+    } catch (e) {
+      gdSetStatus('Slide ' + (i + 1) + ' could not be created: ' + e.message);
+      continue;
+    }
+
+    /* 2 — cards, bands, chart bars, arcs */
+    var dreqs = [];
+    s.decor.forEach(function (d, j) {
+      var oid = 'd' + i + '_' + j;
+      dreqs.push({ createShape: {
+        objectId: oid,
+        shapeType: d.shape,
+        elementProperties: {
+          pageObjectId: sid,
+          size: { width: { magnitude: d.r.w, unit: 'PT' }, height: { magnitude: d.r.h, unit: 'PT' } },
+          transform: { scaleX: 1, scaleY: 1, translateX: d.r.x, translateY: d.r.y, unit: 'PT' }
+        }
+      } });
+      dreqs.push({ updateShapeProperties: {
+        objectId: oid,
+        shapeProperties: {
+          shapeBackgroundFill: { solidFill: { color: d.fill.color, alpha: d.fill.alpha } },
+          outline: { outlineFill: { solidFill: { color: d.fill.color } }, weight: { magnitude: 0.75, unit: 'PT' } }
+        },
+        fields: 'shapeBackgroundFill,outline'
+      } });
+    });
+    if (dreqs.length) {
+      try { await gsApi('presentations/' + pid + '/batchUpdate', 'POST', token, { requests: dreqs }); }
+      catch (e) { /* keep going: the text still lands */ }
+    }
+
+    /* 3 — the photograph (its own call, so it can never block the text) */
+    if (withImgs && s.image && s.image.url) {
+      try {
+        await gsApi('presentations/' + pid + '/batchUpdate', 'POST', token, { requests: [ { createImage: {
+          objectId: 'img_' + i,
+          url: s.image.url,
+          elementProperties: {
+            pageObjectId: sid,
+            size: { width: { magnitude: s.image.r.w, unit: 'PT' }, height: { magnitude: s.image.r.h, unit: 'PT' } },
+            transform: { scaleX: 1, scaleY: 1, translateX: s.image.r.x, translateY: s.image.r.y, unit: 'PT' }
+          }
+        } } ] });
+      } catch (e) { /* photo skipped on this slide */ }
+    }
+
+    /* 4 — every text box, including the small footer words */
+    var treqs = [], tplain = [];
+    s.boxes.forEach(function (b, j) {
+      var oid = 't' + i + '_' + j;
+      var geo = {
+        pageObjectId: sid,
+        size: { width: { magnitude: b.r.w, unit: 'PT' }, height: { magnitude: b.r.h, unit: 'PT' } },
+        transform: { scaleX: 1, scaleY: 1, translateX: b.r.x, translateY: b.r.y, unit: 'PT' }
+      };
+      function mk(withFont) {
+        var style = {
+          fontSize: { magnitude: b.fs, unit: 'PT' },
+          bold: b.bold,
+          italic: b.italic,
+          foregroundColor: { opaqueColor: { rgbColor: b.color } }
+        };
+        var fields = 'fontSize,bold,italic,foregroundColor';
+        if (withFont) {
+          style.fontFamily = b.serif ? 'Georgia' : 'Roboto';
+          fields = 'fontFamily,' + fields;
+        }
+        return [
+          { createShape: { objectId: oid, shapeType: 'TEXT_BOX', elementProperties: geo } },
+          { insertText: { objectId: oid, insertionIndex: 0, text: b.text } },
+          { updateTextStyle: { objectId: oid, textRange: { type: 'ALL' }, style: style, fields: fields } },
+          { updateParagraphStyle: {
+              objectId: oid,
+              textRange: { type: 'ALL' },
+              paragraphStyle: {
+                spaceAbove: { magnitude: 0, unit: 'PT' },
+                spaceBelow: { magnitude: 2, unit: 'PT' },
+                lineSpacing: 100
+              },
+              fields: 'spaceAbove,spaceBelow,lineSpacing'
+          } }
+        ];
+      }
+      treqs = treqs.concat(mk(true));
+      tplain = tplain.concat(mk(false));
+    });
+
+    if (treqs.length) {
+      try {
+        await gsApi('presentations/' + pid + '/batchUpdate', 'POST', token, { requests: treqs });
+      } catch (e) {
+        try {
+          await gsApi('presentations/' + pid + '/batchUpdate', 'POST', token, { requests: tplain });
+        } catch (e2) {
+          gdSetStatus('Slide ' + (i + 1) + ': some text could not be added.');
+        }
+      }
+    }
+
+    /* 5 — real bullet lists */
+    var breqs = [];
+    s.boxes.forEach(function (b, j) {
+      if (!b.list) return;
+      breqs.push({ createParagraphBullets: {
+        objectId: 't' + i + '_' + j,
+        textRange: { type: 'ALL' },
+        bulletPreset: 'BULLET_DISC_CIRCLE_SQUARE'
+      } });
+    });
+    if (breqs.length) {
+      try { await gsApi('presentations/' + pid + '/batchUpdate', 'POST', token, { requests: breqs }); }
+      catch (e) { /* bullets are optional */ }
+    }
+  }
+
+  var url = 'https://docs.google.com/presentation/d/' + pid + '/edit';
+  gdBusy(false);
+  gdSetStatus('Done — “' + name + '” is now in your Google Drive. ' +
+    '<a href="' + url + '" target="_blank" rel="noopener">Open it in Google Slides</a>. ' +
+    'Every text box is editable, including the small footer text on each slide.');
+  try { window.open(url, '_blank'); } catch (e) {}
+  toast('Saved to Google Drive as a real Google Slides presentation.');
+}
+
+/* =========================================================
+   BOOT
+   ========================================================= */
+buildThumbs();
+renderSlide(0);
+toggleNotes();
+fitStage();
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(function () { renderThumb(cur); fitStage(); });
+}
+</script>
+</body>
+</html>
